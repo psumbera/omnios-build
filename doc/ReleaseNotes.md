@@ -4,6 +4,36 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034l (2020-07-20)
+Weekly release for w/c 20th of July 2020.
+> This update requires a reboot
+
+# Fixes
+
+ * Some 64-bit PCI devices were not programmed correctly
+ * The `mlxcx` driver has been updated to fix several problems
+ * Panic in `imc` driver on some systems with broken firmware
+ * LX: `/proc/<pid>/exe` symlink was not always present
+ * LX: Would occasionally see defunct processes with busy parents
+ * LX: Improve support for networking setup in Void linux zones
+ * loader could not read a ZFS pool which had a removed slog device
+ * vioblk devices could hang under memory pressure
+ * It was not possible to run bhyve in the global zone under a DEBUG kernel
+   (although this is possible for testing, bhyve should always be run within a
+    zone for proper protection)
+
+# Other Changes
+
+ * Added a `depend.ooceextra` facet to illumos packages to allow installation
+   without reference to the omnios-extra repository
+ * Updated curl to 7.71.1
+ * Updated OpenJDK8 to 1.8.0\_262
+ * Updated rsync to 3.2.2
+
+<br>
+
+---
+
 ## r151034i (2020-07-01)
 Weekly release for w/c 29th of June 2020.
 > This is a non-reboot update
