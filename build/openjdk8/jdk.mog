@@ -12,7 +12,7 @@
 
 # Copyright 2019 OmniOS Community Edition (OmniOSce) Association.
 
-license $(IFULL)/jre/LICENSE license="GPLv2/with Classpath Exception"
+license LICENSE license="GPLv2/with Classpath Exception"
 
 <transform file path=.*/src.zip$ -> drop>
 <transform path=$(IFULL)/(?:demo|sample) -> drop>

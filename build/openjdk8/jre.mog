@@ -12,7 +12,7 @@
 
 # Copyright 2019 OmniOS Community Edition (OmniOSce) Association.
 
-license $(IFULL)/LICENSE license="GPLv2/with Classpath Exception"
+license LICENSE license="GPLv2/with Classpath Exception"
 
 dir group=bin mode=0755 owner=root path=usr/share/man/man1
 
