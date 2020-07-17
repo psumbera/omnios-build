@@ -12,14 +12,14 @@
 # http://www.illumos.org/license/CDDL.
 # }}}
 #
-# Copyright 2019 OmniOS Community Edition (OmniOSce) Association.
-#
+# Copyright 2020 OmniOS Community Edition (OmniOSce) Association.
+
 . ../../lib/functions.sh
 
 PROG=openjdk
 VER=1.8
-UPDATE=232
-BUILD=09
+UPDATE=262
+BUILD=10
 PKG=openjdk    ##IGNORE## - filled in later
 SUMMARY="tbc"; DESC="tbc"
 
@@ -47,13 +47,13 @@ XFORM_ARGS="
     -D IFULL=$IFULL
 "
 
-set_builddir "$PROG-jdk${MVER}u-$VERHUMAN.1"
+set_builddir "$VERHUMAN"
 set_arch 64
 MJOBS=8
 
 # Do these steps early to set up TMPDIR
 init
-download_source $PROG $VERHUMAN.1
+download_source $PROG $VERHUMAN
 patch_source
 
 # The JDK build framework does not use the -j option to make.
@@ -65,7 +65,7 @@ CONFIGURE_OPTS="
     --with-milestone=fcs
     --with-user-release-suffix=omnios-$RELVER
     --with-update-version=$UPDATE
-    --with-build-number=$BUILD
+    --with-build-number=b$BUILD
     --with-toolchain-type=gcc
     --with-boot-jdk=/usr/java
     --disable-headful
@@ -105,18 +105,6 @@ MAKE_ARGS="
 
 export PATH=/usr/gnu/bin:$PATH
 
-grab() {
-    typeset arc=$1
-    typeset dir=$2
-    pushd $TMPDIR >/dev/null || logerr "pushd $TMPDIR failed"
-    if [ ! -d $dir/include ]; then
-        logcmd get_resource $arc || logerr "--- Failed to download $arc"
-        logcmd extract_archive `basename $arc` \
-            || logerr "--- Failed to extract $arc"
-    fi
-    popd >/dev/null
-}
-
 # Some files are present in both the j2re and j2sdk images.
 # Generate a list of those files so that we deliver them in j2re only.
 find_dups() {
@@ -124,7 +112,7 @@ find_dups() {
 
     pushd $TMPDIR/$BUILDDIR/images >/dev/null || logerr "pushd"
     for c in j2re j2sdk; do
-        find $c-image -type f -o -type l | cut -d/ -f2- | sort \
+        $FD . $c-image -tf -tl | cut -d/ -f2- | sort \
             > $TMPDIR/$c.files
     done
     comm -12 $TMPDIR/j2re.files $TMPDIR/j2sdk.files > $TMPDIR/dups.files
@@ -140,7 +128,7 @@ make_install_j2re() {
     # copy in our JRE files
     pushd $TMPDIR/$BUILDDIR/images/j2re-image > /dev/null || logerr "pushd"
     logcmd mkdir -p $J2RE_INSTALLTMP/$IFULL
-    find . | cpio -pmud $J2RE_INSTALLTMP/$IFULL
+    $FD | cpio -pmud $J2RE_INSTALLTMP/$IFULL
     popd > /dev/null
 }
 
@@ -153,7 +141,7 @@ make_install_j2sdk() {
     # copy in our SDK files
     pushd $TMPDIR/$BUILDDIR/images/j2sdk-image > /dev/null || logerr "pushd"
     logcmd mkdir -p $J2SDK_INSTALLTMP/$IFULL
-    find . | cpio -pmud $J2SDK_INSTALLTMP/$IFULL
+    $FD | cpio -pmud $J2SDK_INSTALLTMP/$IFULL
     popd > /dev/null
 
     # Remove files which are also shipped as part of the JRE
@@ -171,7 +159,7 @@ make_install() {
 
 #############################################################################
 
-grab Xstuff/openwin.tar.gz openwin/X11/include
+BUILDDIR=openwin download_source Xstuff openwin
 chmod +x $CONFIGURE_CMD
 build
 
@@ -200,7 +188,10 @@ PKG=developer/java/openjdk8
 PKGE=`url_encode $PKG`
 SUMMARY="openjdk ${VER#*.} JDK"
 DESC="$_DESC, development kit (JDK)"
-RUN_DEPENDS_IPS=runtime/java/openjdk$MVER
+RUN_DEPENDS_IPS="
+    =runtime/java/openjdk$MVER@$VER
+    runtime/java/openjdk$MVER
+"
 DESTDIR=$J2SDK_INSTALLTMP
 make_package jdk.mog
 
