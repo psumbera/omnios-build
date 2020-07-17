@@ -164,6 +164,7 @@ UNZIP=unzip
 AWK=gawk
 GIT=git
 RIPGREP=/opt/ooce/bin/rg
+FD=/opt/ooce/bin/fd
 CMAKE=/opt/ooce/bin/cmake
 MESON_MAKE=/opt/ooce/bin/ninja
 REALPATH=/usr/gnu/bin/realpath
