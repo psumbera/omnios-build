@@ -166,6 +166,7 @@ UNZIP=unzip
 AWK=gawk
 GIT=git
 RIPGREP=/opt/ooce/bin/rg
+FD=/opt/ooce/bin/fd
 CMAKE=/opt/ooce/bin/cmake
 # Command for privilege escalation. Can be overridden in site.sh
 PFEXEC=sudo
