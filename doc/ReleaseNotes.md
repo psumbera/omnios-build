@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030bl (2020-07-20)
+Weekly release for w/c 20th of July 2020.
+> This is a non-reboot update
+
+# Changes
+
+ * Updated OpenJDK8 to 1.8.0\_262
+ * Updated rsync to 3.2.2
+
+<br>
+
+---
+
 ## r151030bi (2020-07-01)
 Weekly release for w/c 29th of June 2020.
 > This is a non-reboot update
