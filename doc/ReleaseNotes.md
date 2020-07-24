@@ -4,6 +4,21 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030bm (2020-07-27)
+Weekly release for w/c 27th of July 2020.
+> This update requires a reboot
+
+# Fixes
+
+* System panic when using the `lockstat` command
+* `lofiadm -la` does not always create devfs symlinks
+* Fix for vioif hangs when using lso
+* Fix for race in multi-threaded python applications using wrapped TLS sockets
+
+<br>
+
+---
+
 ## r151030bl (2020-07-20)
 Weekly release for w/c 20th of July 2020.
 > This is a non-reboot update
