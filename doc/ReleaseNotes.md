@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151032
 
+## r151032am (2020-07-27)
+Weekly release for w/c 27th of July 2020.
+> This is a non-reboot update
+
+# Changes
+
+* Fix for race in multi-threaded python applications using wrapped TLS sockets
+
+<br>
+
+---
+
 ## r151032al (2020-07-20)
 Weekly release for w/c 20th of July 2020.
 > This is a non-reboot update
