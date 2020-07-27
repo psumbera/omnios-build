@@ -4,6 +4,20 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034m (2020-07-27)
+Weekly release for w/c 27th of July 2020.
+> This update requires a reboot
+
+# Fixes
+
+* Fix for race in multi-threaded python applications using wrapped TLS sockets
+* Update /etc/magic with pattern for Zstandard compressed files
+* Fix for a crash in the xnf network driver when running under Xen or AWS
+
+<br>
+
+---
+
 ## r151034l (2020-07-20)
 Weekly release for w/c 20th of July 2020.
 > This update requires a reboot
