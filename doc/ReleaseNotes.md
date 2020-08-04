@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151032
 
+## r151032an (2020-08-04)
+Weekly release for w/c 3rd of August 2020.
+> This is a non-reboot update
+
+# Changes
+
+* Update `pkg` to fix bugs with conditional dependency handling.
+
+<br>
+
+---
+
 ## r151032am (2020-07-27)
 Weekly release for w/c 27th of July 2020.
 > This is a non-reboot update
