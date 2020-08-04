@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030bn (2020-08-04)
+Weekly release for w/c 3rd of August 2020.
+> This is a non-reboot update
+
+# Changes
+
+* Update `pkg` to fix bugs with conditional dependency handling.
+
+<br>
+
+---
+
 ## r151030bm (2020-07-27)
 Weekly release for w/c 27th of July 2020.
 > This update requires a reboot
