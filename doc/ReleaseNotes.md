@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034q (2020-08-24)
+Weekly release for w/c 24th of August 2020.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `curl` updated fixing
+  * [CVE-2020-8231](https://curl.haxx.se/docs/CVE-2020-8231.html).
+
+<br>
+
+---
+
 ## r151034o (2020-08-10)
 Weekly release for w/c 10th of August 2020.
 > This is a non-reboot update
