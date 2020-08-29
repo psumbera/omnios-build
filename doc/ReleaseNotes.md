@@ -4,6 +4,34 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034r (2020-09-01)
+Weekly release for w/c 31st of August 2020.
+> This update requires a reboot
+
+# Other Changes
+
+* Fix for a ZFS-related panic -
+  [13034 dnode_sync is careless with range tree](https://www.illumos.org/issues/13034)
+
+* [12755 Double fault when booting under Amazon EC2](https://www.illumos.org/issues/12755)
+
+* Various fixes for the `mlxcx` network driver; illumos issues
+  [12980](https://www.illumos.org/issues/12980),
+  [12987](https://www.illumos.org/issues/12987) and
+  [12988](https://www.illumos.org/issues/12988)
+
+* Better emulation for sendfile() in lx zones. In particular this fixes
+  problems experienced with Python 3.8's pip command
+
+* `crontab` has gained a `-u` option
+
+* `/lib/svc/bin/smfcron` is provided to more easily create SMF services that
+  add and remove cron jobs
+
+<br>
+
+---
+
 ## r151034q (2020-08-24)
 Weekly release for w/c 24th of August 2020.
 > This is a non-reboot update
