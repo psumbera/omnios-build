@@ -4,6 +4,21 @@
 
 # Release Notes for OmniOSce v11 r151032
 
+## r151032ar (2020-09-01)
+Weekly release for w/c 31st of August 2020.
+> This update requires a reboot
+
+# Other Changes
+
+* `crontab` has gained a `-u` option
+
+* `/lib/svc/bin/smfcron` is provided to more easily create SMF services that
+  add and remove cron jobs
+
+<br>
+
+---
+
 ## r151032aq (2020-08-24)
 Weekly release for w/c 24th of August 2020.
 > This is a non-reboot update
