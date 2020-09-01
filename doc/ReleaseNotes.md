@@ -4,6 +4,24 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030br (2020-09-01)
+Weekly release for w/c 31st of August 2020.
+> This update requires a reboot
+
+# Other Changes
+
+* Fix for a ZFS-related panic -
+  [13034 dnode_sync is careless with range tree](https://www.illumos.org/issues/13034)
+
+* `crontab` has gained a `-u` option
+
+* `/lib/svc/bin/smfcron` is provided to more easily create SMF services that
+  add and remove cron jobs
+
+<br>
+
+---
+
 ## r151030bq (2020-08-24)
 Weekly release for w/c 24th of August 2020.
 > This is a non-reboot update
