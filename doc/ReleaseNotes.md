@@ -4,9 +4,31 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030bt (2020-09-15)
+Weekly release for w/c 14th of September 2020.
+> This update requires a reboot if bhyve is installed
+
+# Security Fixes
+
+* It was possible for a bhyve guest running under AMD SVM to execute some
+  instructions against host physical memory -
+  [CVE-2020-7467](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7467)
+
+<br>
+
+---
+
 ## r151030br (2020-09-01)
 Weekly release for w/c 31st of August 2020.
 > This update requires a reboot
+
+# Security Fixes
+
+* It was theoretically possible to escape from a zone that has permission
+  to create a bhyve instance -
+  [CVE-2020-24718](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24718)
+  Note that in OmniOS only _bhyve_-branded zones have access to bhyve and this
+  vulnerability does not enable escape from a bhyve virtual machine.
 
 # Other Changes
 
