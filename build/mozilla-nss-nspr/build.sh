@@ -1,29 +1,20 @@
 #!/usr/bin/bash
 #
-# {{{ CDDL HEADER START
+# {{{ CDDL HEADER
 #
-# The contents of this file are subject to the terms of the
-# Common Development and Distribution License, Version 1.0 only
-# (the "License").  You may not use this file except in compliance
-# with the License.
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
 #
-# You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
-# or http://www.opensolaris.org/os/licensing.
-# See the License for the specific language governing permissions
-# and limitations under the License.
-#
-# When distributing Covered Code, include this CDDL HEADER in each
-# file and include the License file at usr/src/OPENSOLARIS.LICENSE.
-# If applicable, add the following below this CDDL HEADER, with the
-# fields enclosed by brackets "[]" replaced with your own identifying
-# information: Portions Copyright [yyyy] [name of copyright owner]
-#
-# CDDL HEADER END }}}
+# A full copy of the text of the CDDL should have accompanied this
+# source. A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+# }}}
 #
 # Copyright 2017 OmniTI Computer Consulting, Inc.  All rights reserved.
-# Copyright 2019 OmniOS Community Edition (OmniOSce) Association.
-# Use is subject to license terms.
-#
+# Copyright 2020 OmniOS Community Edition (OmniOSce) Association.
+
 . ../../lib/functions.sh
 
 PROG=nss
@@ -43,15 +34,24 @@ DIST64=SunOS5.11_i86pc_gcc_64_OPT.OBJ
 BUILD_DEPENDS_IPS="library/nspr/header-nspr"
 
 MAKE_ARGS="
+    -C nss
     BUILD_OPT=1
     NS_USE_GCC=1
     NO_MDUPDATE=1
+    USE_MDUPDATE=
     NSDISTMODE=copy
     NSS_USE_SYSTEM_SQLITE=1
     NSS_ENABLE_WERROR=0
+    nss_build_all
 "
-MAKE_ARGS_WS="
-    XCFLAGS=\"-g $CFLAGS\"
+MAKE_ARGS_WS_32="
+    XCFLAGS=\"-g $CFLAGS32 $CFLAGS\"
+    LDFLAGS=\"$LDFLAGS32 $LDFLAGS\"
+"
+MAKE_ARGS_WS_64="
+    USE_64=1
+    XCFLAGS=\"-g $CFLAGS64 $CFLAGS\"
+    LDFLAGS=\"$LDFLAGS64 $LDFLAGS\"
 "
 
 NSS_LIBS="libfreebl3.so libnss3.so libnssckbi.so libnssdbm3.so
@@ -65,42 +65,25 @@ NSPR_MANS=
 
 NSPR_SAVE="$TMPDIR/nspr-save.$$"
 
-export CC
-
 make_clean() {
-    # Assume PWD == top-level with nss & nspr subdirs.
     /bin/rm -rf dist
-    pushd nss >/dev/null || logerr "pushd nss"
-    logcmd gmake $MAKE_ARGS nss_clean_all || logerr "Can't make clean"
-    popd >/dev/null
 }
 
 configure32() {
-    # Get the install/prototype path out of the way now.
-    logcmd mkdir -p $DESTDIR/usr/lib/mps \
-        || logerr "Failed to create NSS install directory."
-}
-
-make_prog32() {
-    eval set -- $MAKE_ARGS_WS
-    pushd nss >/dev/null || logerr "pushd nss"
-    logmsg "  -- nspr"
-    logcmd $MAKE $MAKE_ARGS "$@" $MAKE_JOBS build_nspr \
-        || logerr "nspr build failed"
-    for d in coreconf lib cmd; do
-        logmsg "  -- $d"
-        logcmd $MAKE $MAKE_ARGS "$@" -C $d || logerr "$d build failed"
-    done
-    popd >/dev/null
+    export MAKE_ARGS_WS="$MAKE_ARGS_WS_32"
 }
 
 make_install32() {
     logmsg "Installing libraries (32)"
+
+    logcmd mkdir -p $DESTDIR/usr/lib/mps \
+        || logerr "Failed to create NSS install directory."
     for lib in $TGT_LIBS; do
         logcmd cp $TMPDIR/$BUILDDIR/dist/$DIST32/lib/$lib \
             $DESTDIR/usr/lib/mps/$lib \
             || logerr "Install $lib failed"
     done
+
     logmsg "Installing headers"
     logcmd mkdir -p $DESTDIR/usr/include/mps \
         || logerr "Failed to create NSS header install directory."
@@ -126,31 +109,20 @@ make_install32() {
 }
 
 configure64() {
-    # Get the install/prototype path out of the way now.
-    logcmd mkdir -p $DESTDIR/usr/lib/mps/amd64 \
-        || logerr "Failed to create NSS install directory."
-}
-
-make_prog64() {
-    eval set -- $MAKE_ARGS_WS
-    pushd nss >/dev/null || logerr "pushd nss"
-    logmsg "  -- nspr"
-    logcmd $MAKE $MAKE_ARGS "$@" $MAKE_JOBS USE_64=1 build_nspr \
-        || logerr "nspr build failed"
-    for d in coreconf lib cmd; do
-        logmsg "  -- $d"
-        logcmd $MAKE $MAKE_ARGS "$@" USE_64=1 -C $d || logerr "$d build failed"
-    done
-    popd >/dev/null
+    export MAKE_ARGS_WS="$MAKE_ARGS_WS_64"
 }
 
 make_install64() {
     logmsg "Installing libraries (64)"
+
+    logcmd mkdir -p $DESTDIR/usr/lib/mps/amd64 \
+        || logerr "Failed to create NSS install directory."
     for lib in $TGT_LIBS; do
         logcmd cp $TMPDIR/$BUILDDIR/dist/$DIST64/lib/$lib \
             $DESTDIR/usr/lib/mps/amd64/$lib \
             || logerr "Install $lib failed"
     done
+
     logmsg "Installing binaries (64)"
     logcmd mkdir -p $DESTDIR/usr/bin/amd64
     for bin in $TGT_BINS; do
