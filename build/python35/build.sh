@@ -12,12 +12,12 @@
 # http://www.illumos.org/license/CDDL.
 # }}}
 #
-# Copyright 2019 OmniOS Community Edition (OmniOSce) Association.
+# Copyright 2020 OmniOS Community Edition (OmniOSce) Association.
 #
 . ../../lib/functions.sh
 
 PROG=Python
-VER=3.5.8
+VER=3.5.10
 PKG=runtime/python-35
 MVER=${VER%.*}
 SUMMARY="$PROG $MVER"
