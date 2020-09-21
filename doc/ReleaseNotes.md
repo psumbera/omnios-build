@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151032
 
+## r151032au (2020-09-22)
+Weekly release for w/c 21st of September 2020.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `python3` updated to
+  [3.5.10](https://docs.python.org/3.5/whatsnew/changelog.html).
+
+<br>
+
+---
+
 ## r151032at (2020-09-15)
 Weekly release for w/c 14th of September 2020.
 > This update requires a reboot if bhyve is installed
