@@ -1,4 +1,4 @@
 nss-modernize.patch
 sse-align.patch
-endian.patch
 shadowing.patch
+pkcs11v3.patch
