@@ -4,6 +4,26 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030bu (2020-09-22)
+Weekly release for w/c 21st of September 2020.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `python3` updated to
+  [3.5.10](https://docs.python.org/3.5/whatsnew/changelog.html).
+
+# Other Changes
+
+* `nss` updated to `3.57` and
+  `nspr` updated to `4.29`
+  (including an updated `ca-bundle`).
+* `hwdata` updated to 2020.9.15.
+
+<br>
+
+---
+
 ## r151030bt (2020-09-15)
 Weekly release for w/c 14th of September 2020.
 > This update requires a reboot if bhyve is installed
