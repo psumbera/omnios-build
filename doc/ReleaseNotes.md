@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034w (2020-10-05)
+Weekly release for w/c 5th of October 2020.
+> This is a non-reboot update
+
+# Other Changes
+
+* Enhancement to `pkg` to allow for more detailed diagnostic messages
+  via `-vv` in the event that an upgrade solution can't be found.
+
+<br>
+
+---
+
 ## r151034t (2020-09-15)
 Weekly release for w/c 14th of September 2020.
 > This update requires a reboot if bhyve is installed
