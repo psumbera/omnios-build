@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151032
 
+## r151032aw (2020-10-05)
+Weekly release for w/c 5th of October 2020.
+> This is a non-reboot update
+
+# Other Changes
+
+* Enhancement to `pkg` to allow for more detailed diagnostic messages
+  via `-vv` in the event that an upgrade solution can't be found.
+
+<br>
+
+---
+
 ## r151032au (2020-09-22)
 Weekly release for w/c 21st of September 2020.
 > This is a non-reboot update
