@@ -4,6 +4,20 @@
 
 # Release Notes for OmniOSce v11 r151032
 
+## r151032ay (2020-10-22)
+Weekly release for w/c 19th of October 2020.
+> This update requires a reboot
+
+# Security Fixes
+
+* Fix for
+  [CVE-2020-14871](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14871)
+  - a pre-auth remote root exploit in PAM.
+
+<br>
+
+---
+
 ## r151032aw (2020-10-05)
 Weekly release for w/c 5th of October 2020.
 > This is a non-reboot update
