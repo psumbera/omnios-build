@@ -6,7 +6,7 @@
 
 ## r151034y (2020-10-22)
 Weekly release for w/c 19th of October 2020.
-> This update requires an update
+> This update requires a reboot
 
 # Security Fixes
 
