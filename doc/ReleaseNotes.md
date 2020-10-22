@@ -4,6 +4,29 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034y (2020-10-22)
+Weekly release for w/c 19th of October 2020.
+> This update requires an update
+
+# Security Fixes
+
+* Fix for
+  [CVE-2020-14871](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14871)
+  - a pre-auth remote root exploit in PAM.
+
+# Other Changes
+
+* It should be possible to boot from a ZFS pool which has or has previously
+  had a log device.
+
+* 8-bit mode clear screen uses the wrong colour.
+
+* System can panic with an error in the IP module.
+
+<br>
+
+---
+
 ## r151034w (2020-10-05)
 Weekly release for w/c 5th of October 2020.
 > This is a non-reboot update
