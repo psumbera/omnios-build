@@ -11,7 +11,7 @@ Weekly release for w/c 19th of October 2020.
 # Security Fixes
 
 * Fix for
-  [CVE-2020-14871](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14871)
+  [CVE-2020-27678](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27678)
   - a pre-auth remote root exploit in PAM.
 
 # Other Changes
