@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034z (2020-10-26)
+Weekly release for w/c 26th of October 2020.
+> This is a non-reboot update
+
+# Security Fixes
+
+* OpenJDK 8 updated to 1.8.0.272, fixing
+  [multiple CVEs](https://foojay.io/java-8/?quarter=102020&tab=cve&version=openjdk8u272).
+
+<br>
+
+---
+
 ## r151034y (2020-10-22)
 Weekly release for w/c 19th of October 2020.
 > This update requires a reboot
