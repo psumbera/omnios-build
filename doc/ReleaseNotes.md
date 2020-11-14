@@ -4,6 +4,23 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030cc (2020-11-17)
+Weekly release for w/c 16th of November 2020.
+> This update requires a reboot
+
+# Security Fixes
+
+* Updated Intel processor microcode from Intel, fixing several security
+  vulnerabilities.
+
+# Other Changes
+
+* `pkg` could backtrace when displaying licence information.
+
+<br>
+
+---
+
 ## r151030bz (2020-10-26)
 Weekly release for w/c 26th of October 2020.
 > This is a non-reboot update
