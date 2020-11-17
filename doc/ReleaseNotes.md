@@ -4,6 +4,27 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036c (2020-11-17)
+Weekly release for w/c 16th of November 2020.
+> This update requires a reboot
+
+# Security Fixes
+
+* Updated Intel processor microcode from Intel, fixing several security
+  vulnerabilities.
+
+# Other Changes
+
+* `rsyslog` was ignoring the local system timezone and always logging in UTC.
+
+* `pkg` could backtrace when displaying licence information.
+
+* Rebuilt IPS repositories were not compatible with Oracle Solaris clients.
+
+<br>
+
+---
+
 Stable Release, 2nd of November 2020
 
 `uname -a` shows `omnios-r151036-4a32ffb911`
