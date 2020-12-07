@@ -4,6 +4,61 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036f (2020-12-10)
+Weekly release for w/c 7th of December 2020.
+> This update requires a reboot
+
+# Security Fixes
+
+* `openssl` updated to 1.1.1i, fixing
+  [CVE-2020-1971](https://www.openssl.org/news/secadv/20201208.txt)
+
+* `openssl 1.0` updated to fix
+  [CVE-2020-1968](https://www.openssl.org/news/secadv/20200909.txt),
+  [CVE-2020-1971](https://www.openssl.org/news/secadv/20201208.txt)
+
+* `curl` updated to 7.74.0, fixing
+  [CVE-2020-8284](https://curl.se/docs/CVE-2020-8284.html),
+  [CVE-2020-8285](https://curl.se/docs/CVE-2020-8285.html),
+  [CVE-2020-8286](https://curl.se/docs/CVE-2020-8286.html)
+
+# Bug Fixes
+
+* MacOS Big Sur clients would experience read hangs when accessing OmniOS
+  SMB shares.
+
+* In rare cases, a system could crash shortly after boot while maintaining
+  ZFS user quota information (particularly if a zfs recv was running at
+  the same time).
+
+* The `pkg apply-hot-fix` command, in conjunction with the creation of a new
+  boot environment, would sometimes leave extra origins configured in
+  non-global zones. This caused problems for subsequent package updates.
+
+* The `pciutils` package tools were unable to enumerate PCI devices.
+
+* Compiling with `gcc -pg` did not produce a working profiling binary.
+
+* A file's modification time would change twice when the file was modified
+  from an SMB client. This caused problems for some Windows utilities.
+
+* Restore the NDMP ZFS backup and restore method which was inadvertently
+  broken in the r151036 release.
+
+
+# Other Changes
+
+* The Intel CPU microcode update for some Core (Gen. 11) Mobile processors
+  has been removed as it was reported to cause problems on some platforms.
+
+* The template `.env` file for building illumos-gate on OmniOS has been
+  updated to use OpenJDK 11 by default
+  (following integration of [13315](https://www.illumos.org/issues/13315))
+
+<br>
+
+---
+
 ## r151036c (2020-11-17)
 Weekly release for w/c 16th of November 2020.
 > This update requires a reboot
