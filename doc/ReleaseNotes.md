@@ -4,6 +4,48 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034af (2020-12-10)
+Weekly release for w/c 07th of December 2020.
+> This update requires a reboot
+
+# Security Fixes
+
+* `openssl` updated to 1.1.1i, fixing
+  [CVE-2020-1971](https://www.openssl.org/news/secadv/20201208.txt)
+
+* `openssl 1.0` updated to fix
+  [CVE-2020-1968](https://www.openssl.org/news/secadv/20200909.txt),
+  [CVE-2020-1971](https://www.openssl.org/news/secadv/20201208.txt)
+
+* `curl` updated to 7.74.0, fixing
+  [CVE-2020-8284](https://curl.se/docs/CVE-2020-8284.html),
+  [CVE-2020-8285](https://curl.se/docs/CVE-2020-8285.html),
+  [CVE-2020-8286](https://curl.se/docs/CVE-2020-8286.html)
+
+# Bug Fixes
+
+* MacOS Big Sur clients would experience read hangs when accessing OmniOS
+  SMB shares.
+
+* In rare cases, a system could crash shortly after boot while maintaining
+  ZFS user quota information (particularly if a zfs recv was running at
+  the same time).
+
+* The `pkg apply-hot-fix` command, in conjunction with the creation of a new
+  boot environment, would sometimes leave extra origins configured in
+  non-global zones. This caused problems for subsequent package updates.
+
+* Compiling with `gcc -pg` did not produce a working profiling binary.
+
+# Other Changes
+
+* The Intel CPU microcode update for some Core (Gen. 11) Mobile processors
+  has been removed as it was reported to cause problems on some platforms.
+
+<br>
+
+---
+
 ## r151034ac (2020-11-17)
 Weekly release for w/c 16th of November 2020.
 > This update requires a reboot
