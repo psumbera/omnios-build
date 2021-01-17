@@ -23,6 +23,10 @@ BUILD=11
 PKG=runtime/java/openjdk11
 SUMMARY="openjdk $VER"
 DESC="Open-source implementation of the eleventh edition of the Java SE Platform"
+DASHREV=1
+
+LIBERATIONFONTSVER=2.1.2
+SKIP_LICENCES="SILv1.1"
 
 set_arch 64
 # This component does not yet build with gcc 10
@@ -53,6 +57,7 @@ XFORM_ARGS="
     -DIVER=$IVER
     -DIROOT=$IROOT
     -DIFULL=$IFULL
+    -DLFVER=$LIBERATIONFONTSVER
 "
 
 # The JDK build framework does not use the -j option to make.
@@ -88,11 +93,24 @@ make_install() {
     logcmd mkdir -p $DESTDIR/$IFULL || logerr "--- mkdir failed"
     logcmd rsync -a $TMPDIR/$BUILDDIR/images/jdk/ $DESTDIR/$IFULL/ \
         || logerr "--- rsync failed"
+
+    # Install liberation fonts to cover the 'core fonts' set
+    # See also patches/fontpath.patch
+    DDIR=$DESTDIR/$IFULL/lib/fonts
+    logcmd mkdir -p $DDIR || logerr "mkdir fonts"
+    logcmd cp $TMPDIR/$LFDIR/Liberation*.ttf $DDIR \
+        || logerr "failed to copy fonts"
 }
 
 init
 download_source $PROG "jdk-$VER.0.$UPDATE+$BUILD"
 patch_source
+
+# Also download the liberation fonts archive. Fonts from here will be
+# provided to satisfy the core fonts.
+LFDIR=liberation-fonts-ttf-$LIBERATIONFONTSVER
+BUILDDIR=$LFDIR download_source liberation-fonts $LFDIR
+
 prep_build autoconf -oot
 chmod +x $CONFIGURE_CMD
 build
