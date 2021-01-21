@@ -12,14 +12,14 @@
 # http://www.illumos.org/license/CDDL.
 # }}}
 #
-# Copyright 2020 OmniOS Community Edition (OmniOSce) Association.
+# Copyright 2021 OmniOS Community Edition (OmniOSce) Association.
 
 . ../../lib/functions.sh
 
 PROG=openjdk
 VER=1.8
-UPDATE=272
-BUILD=10
+UPDATE=282
+BUILD=08
 PKG=openjdk    ##IGNORE## - filled in later
 SUMMARY="tbc"; DESC="tbc"
 
@@ -83,6 +83,7 @@ CONFIGURE_OPTS="
     --with-memory-size=768
     --disable-precompiled-headers
     --disable-ccache
+    --with-native-debug-symbols=none
     --with-freetype=$OOCEPREFIX
     --with-freetype-include=$OOCEPREFIX/include/freetype2
     --with-freetype-lib=$OOCEPREFIX/lib/$ISAPART64
