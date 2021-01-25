@@ -4,6 +4,40 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036m (2021-01-25)
+Weekly release for w/c 25th of January 2021.
+> This update requires a reboot
+
+# Security Fixes
+
+* It was possible for an unprivileged user, including one in a zone, to cause
+  the system to panic.
+
+* `socat` updated to fix a potential heap based buffer overflow.
+
+# Other Changes
+
+* Support for Active-Directory servers which enforce secure RPC
+  (due to CVE-2020-1472).
+
+* OpenJDK 11 now bundles several core fonts and has been updated to 11.0.10+9
+
+* OpenJDK 8 has been updated to 1.8.282-b08
+
+* `gcc` has been updated so that the `-z assert-deflib` linker option works
+  correctly for 64-bit objects.
+
+* ZFS `list -t bookmark` was not working for zvols.
+
+* Add support for the `IA32_FEATURE_CONTROL` MSR in bhyve. This improves
+  support for some guest operating systems.
+
+* `pkg apply-hot-fix` could produce error messages during operation.
+
+<br>
+
+---
+
 ## r151036f (2020-12-10)
 Weekly release for w/c 7th of December 2020.
 > This update requires a reboot
