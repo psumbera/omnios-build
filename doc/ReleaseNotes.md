@@ -13,6 +13,9 @@ Weekly release for w/c 25th of January 2021.
 * It was possible for an unprivileged user, including one in a zone, to cause
   the system to panic.
 
+* `sudo` updated to 1.9.5p2, fixing
+  [CVE-2021-3156](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156).
+
 * `socat` updated to fix a potential heap based buffer overflow.
 
 # Other Changes
