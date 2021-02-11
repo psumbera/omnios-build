@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034ao (2021-02-11)
+Weekly release for w/c 8th of February 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `screen` updated to fix
+  [CVE-2021-3156](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156).
+
+<br>
+
+---
+
 ## r151034am (2021-01-25)
 Weekly release for w/c 25th of January 2021.
 > This update requires a reboot
