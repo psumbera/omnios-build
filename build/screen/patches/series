@@ -1,3 +1,4 @@
 Makefile.in.patch
 xnet-hack.patch
 ncurses.patch
+CVE-2021-26937.patch
