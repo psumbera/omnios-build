@@ -21,12 +21,12 @@
 # CDDL HEADER END }}}
 #
 # Copyright 2017 OmniTI Computer Consulting, Inc.  All rights reserved.
-# Copyright 2020 OmniOS Community Edition (OmniOSce) Association.
+# Copyright 2021 OmniOS Community Edition (OmniOSce) Association.
 #
 . ../../lib/functions.sh
 
 PROG=openssl
-VER=1.1.1i
+VER=1.1.1j
 LVER=1.0.2u
 VERHUMAN=$VER
 PKG=library/security/openssl
