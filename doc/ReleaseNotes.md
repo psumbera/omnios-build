@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030cq (2021-02-26)
+Weekly release for w/c 22nd of Februrary 2021.
+> This is a non-reboot update
+
+# Other Changes
+
+* Fix a regression in the `python-35` package.
+
+<br>
+
+---
+
 ## r151030cp (2021-02-18)
 Weekly release for w/c 15th of February 2021.
 > This update requires a reboot
