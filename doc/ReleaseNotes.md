@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030cs (2021-03-10)
+Weekly release for w/c 8th of March 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `git` has been updated to version 2.21.4, fixing
+  [CVE-2021-21300](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21300).
+
+<br>
+
+---
+
 ## r151030cq (2021-02-26)
 Weekly release for w/c 22nd of Februrary 2021.
 > This is a non-reboot update
