@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036s (2021-03-10)
+Weekly release for w/c 8th of March 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `git` has been updated to version 2.28.1, fixing
+  [CVE-2021-21300](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21300).
+
+<br>
+
+---
+
 ## r151036p (2021-02-18)
 Weekly release for w/c 15th of February 2021.
 > This update requires a reboot
