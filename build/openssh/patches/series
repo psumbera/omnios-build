@@ -24,3 +24,4 @@ revert-dscp.patch
 test.patch
 gssapi.patch
 ssh-copy-id.patch
+CVE-2021-28041.patch
