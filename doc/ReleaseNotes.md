@@ -4,6 +4,20 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030cu (2021-03-25)
+Weekly release for w/c 22th of March 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `openssl` updated to 1.1.1k, fixing
+  [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449),
+  [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3450)
+
+<br>
+
+---
+
 ## r151030cs (2021-03-10)
 Weekly release for w/c 8th of March 2021.
 > This is a non-reboot update
