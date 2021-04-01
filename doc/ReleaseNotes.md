@@ -4,6 +4,20 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034av (2021-04-01)
+Weekly release for w/c 29th of March 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `curl` updated to 7.76.0, fixing
+  [CVE-2021-22876](https://curl.se/docs/CVE-2021-22876.html),
+  [CVE-2021-22890](https://curl.se/docs/CVE-2021-22890.html)
+
+<br>
+
+---
+
 ## r151034au (2021-03-25)
 Weekly release for w/c 22th of March 2021.
 > This is a non-reboot update
