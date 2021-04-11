@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030cx (2021-04-14)
+Weekly release for w/c 12th of April 2021.
+> This is a non-reboot update
+
+# Changes
+
+* `curl` updated to 7.76.1
+
+<br>
+
+---
+
 ## r151030cv (2021-04-01)
 Weekly release for w/c 29th of March 2021.
 > This is a non-reboot update
