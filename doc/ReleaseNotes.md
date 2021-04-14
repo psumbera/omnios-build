@@ -4,6 +4,21 @@
 
 # Release Notes for OmniOSce v11 r151034
 
+## r151034ax (2021-04-14)
+Weekly release for w/c 12th of April 2021.
+> This update requires a reboot
+
+# Changes
+
+* `curl` updated to 7.76.1
+
+* Changing the encryption key on a ZFS dataset with clones did not update
+  the clones themselves, rendering them inaccessible.
+
+<br>
+
+---
+
 ## r151034av (2021-04-01)
 Weekly release for w/c 29th of March 2021.
 > This is a non-reboot update
