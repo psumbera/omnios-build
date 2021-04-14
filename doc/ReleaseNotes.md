@@ -4,6 +4,33 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036x (2021-04-14)
+Weekly release for w/c 12th of April 2021.
+> This update requires a reboot
+
+# Changes
+
+* `curl` updated to 7.76.1
+
+* Changing the encryption key on a ZFS dataset with clones did not update
+  the clones themselves, rendering them inaccessible.
+
+* SMB shares from an _lofs_ mount would fail.
+
+* Reaping many process with shared mappings of files on ZFS was extremely slow.
+
+* In rare cases, a kernel panic could occur during system boot due to a race
+  condition in the mlxcx driver.
+
+* The pkg depot server would periodically hang when accessed over low-latency
+  connections.
+
+* The `dma` mailer could spin when trying to create a new local mailbox.
+
+<br>
+
+---
+
 ## r151036v (2021-04-01)
 Weekly release for w/c 29th of March 2021.
 > This is a non-reboot update
