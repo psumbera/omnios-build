@@ -4,6 +4,20 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036y (2021-04-22)
+Weekly release for w/c 19th of April 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `openjdk` updated, fixing
+  [CVE-2021-2161](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2161),
+  [CVE-2021-2163](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2163)
+
+<br>
+
+---
+
 ## r151036x (2021-04-14)
 Weekly release for w/c 12th of April 2021.
 > This update requires a reboot
