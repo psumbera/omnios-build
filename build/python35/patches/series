@@ -28,3 +28,5 @@ socket.patch
 testsuite.patch
 disable_epoll.patch
 CVE-2021-3177.patch
+CVE-2021-3426.patch
+security-issue43285.patch
