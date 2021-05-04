@@ -1132,7 +1132,7 @@ r151030 release repository: https://pkg.omniosce.org/r151030/core
   to this release. Refer to
   <https://omniosce.org/info/sunssh> for more details.
 
-### Package changes ([+] Added, [-] Removed, [\*] Changed)
+### Package changes
 
 | Package | Old Version | New Version |
 | :------ | :---------- | :---------- |
