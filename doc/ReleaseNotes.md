@@ -651,7 +651,7 @@ an earlier release, upgrade in stages following the guide at
   OmniOS has completely transitioned to OpenSSL 1.1.1 but retains the
   OpenSSL 1.0.2 libraries for backwards compatibility.
 
-### Package changes ([+] Added, [-] Removed, [\*] Changed)
+### Package changes
 
 | Package | Old Version | New Version |
 | :------ | :---------- | :---------- |
