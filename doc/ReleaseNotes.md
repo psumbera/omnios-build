@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030dc (2021-05-18)
+Weekly release for w/c 17th of May 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* libxml2 updated to 2.9.12, fixing
+  [CVE-2021-3541](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3541).
+
+<br>
+
+---
+
 ## r151030cy (2021-04-22)
 Weekly release for w/c 19th of April 2021.
 > This is a non-reboot update
