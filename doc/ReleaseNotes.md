@@ -4,6 +4,21 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030dd (2021-05-26)
+Weekly release for w/c 24th of May 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* curl updated to 7.77.0, fixing
+  [CVE-2021-22901](https://curl.se/docs/CVE-2021-22901.html),
+  [CVE-2021-22898](https://curl.se/docs/CVE-2021-22898.html),
+  [CVE-2021-22897](https://curl.se/docs/CVE-2021-22897.html)
+
+<br>
+
+---
+
 ## r151030dc (2021-05-18)
 Weekly release for w/c 17th of May 2021.
 > This is a non-reboot update
