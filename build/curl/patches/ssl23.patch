@@ -1,0 +1,47 @@
+Revert the following patch for the LTS OmniOS release:
+
+Subject: [PATCH] curl: ignore options asking for SSLv2 or SSLv3
+Instead output a warning about it and continue with the defaults.
+
+diff -wpruN '--exclude=*.orig' a~/docs/cmdline-opts/sslv2.d a/docs/cmdline-opts/sslv2.d
+--- a~/docs/cmdline-opts/sslv2.d	1970-01-01 00:00:00
++++ a/docs/cmdline-opts/sslv2.d	1970-01-01 00:00:00
+@@ -9,5 +9,6 @@ See-also: http1.1 http2
+ Help: Use SSLv2
+ Category: tls
+ ---
+-This option previously asked curl to use SSLv2, but starting in curl 7.77.0 this
+-instruction is ignored. SSLv2 is widely considered insecure (see RFC 6176).
++Forces curl to use SSL version 2 when negotiating with a remote SSL
++server. Sometimes curl is built without SSLv2 support. SSLv2 is widely
++considered insecure (see RFC 6176).
+diff -wpruN '--exclude=*.orig' a~/docs/cmdline-opts/sslv3.d a/docs/cmdline-opts/sslv3.d
+--- a~/docs/cmdline-opts/sslv3.d	1970-01-01 00:00:00
++++ a/docs/cmdline-opts/sslv3.d	1970-01-01 00:00:00
+@@ -9,6 +9,6 @@ See-also: http1.1 http2
+ Help: Use SSLv3
+ Category: tls
+ ---
+-This option previously asked curl to use SSLv3, but starting in curl 7.77.0
+-this instruction is ignored. SSLv3 is widely considered insecure (see RFC
+-7568).
++Forces curl to use SSL version 3 when negotiating with a remote SSL
++server. Sometimes curl is built without SSLv3 support. SSLv3 is widely
++considered insecure (see RFC 7568).
+diff -wpruN '--exclude=*.orig' a~/src/tool_getparam.c a/src/tool_getparam.c
+--- a~/src/tool_getparam.c	1970-01-01 00:00:00
++++ a/src/tool_getparam.c	1970-01-01 00:00:00
+@@ -1307,11 +1307,11 @@ ParameterError getparameter(const char *
+       break;
+     case '2':
+       /* SSL version 2 */
+-      warnf(global, "Ignores instruction to use SSLv2\n");
++      config->ssl_version = CURL_SSLVERSION_SSLv2;
+       break;
+     case '3':
+       /* SSL version 3 */
+-      warnf(global, "Ignores instruction to use SSLv3\n");
++      config->ssl_version = CURL_SSLVERSION_SSLv3;
+       break;
+     case '4':
+       /* IPv4 */

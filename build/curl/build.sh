@@ -26,7 +26,7 @@
 . ../../lib/functions.sh
 
 PROG=curl
-VER=7.76.1
+VER=7.77.0
 PKG=web/curl
 SUMMARY="Command line tool for transferring data with URL syntax"
 DESC="Curl is a command line tool for transferring data with URL syntax, "
@@ -37,6 +37,8 @@ RUN_DEPENDS_IPS="web/ca-bundle library/libidn"
 CONFIGURE_OPTS="
     --enable-thread
     --with-ca-bundle=/etc/ssl/cacert.pem
+    --with-ca-path=/etc/ssl/certs
+    --with-openssl
 "
 # curl has arch-dependent headers.
 CONFIGURE_OPTS_64+=" --includedir=$PREFIX/include/amd64"
