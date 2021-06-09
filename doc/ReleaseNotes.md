@@ -11,7 +11,7 @@ Weekly release for w/c 14th of June 2021.
 # Security Fixes
 
 * ISC DHCP updated to 4.4.2-P1, fixing
-  [CVE-2021-25217](https://curl.se/docs/CVE-2021-25217.html)
+  [CVE-2021-25217](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25217).
 
 <br>
 
