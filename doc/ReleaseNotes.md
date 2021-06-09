@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030dg (2021-06-14)
+Weekly release for w/c 14th of June 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* ISC DHCP updated to 4.4.2-P1, fixing
+  [CVE-2021-25217](https://curl.se/docs/CVE-2021-25217.html)
+
+<br>
+
+---
+
 ## r151030dd (2021-05-26)
 Weekly release for w/c 24th of May 2021.
 > This is a non-reboot update
