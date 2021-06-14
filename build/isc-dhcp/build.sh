@@ -60,7 +60,7 @@ prep_build
 build
 install_smf network isc-dhcp.xml dhcrelay
 pre_package
-make_package
+VER=${VER/-P/.} make_package
 clean_up
 
 # Vim hints
