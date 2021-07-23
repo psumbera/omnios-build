@@ -43,5 +43,4 @@ omnios-headless.patch
 security-pkcs11.patch
 fontpath.patch
 illumos-port-6.patch
-illumos-cpu_microcode_revision.patch
 no_disable_TLS1.0_1.1.patch
