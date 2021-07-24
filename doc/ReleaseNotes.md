@@ -4,6 +4,28 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030dl (2021-07-23)
+Weekly release for w/c 19th of July 2021.
+> This is a non-reboot update
+
+# Security Fixes
+
+* `curl` has been updated to version 7.78.0 fixing 5 security vulnerabilities:
+  * [CVE-2021-22922](https://curl.se/docs/CVE-2021-22922.html)
+  * [CVE-2021-22923](https://curl.se/docs/CVE-2021-22923.html)
+  * [CVE-2021-22924](https://curl.se/docs/CVE-2021-22924.html)
+  * [CVE-2021-22925](https://curl.se/docs/CVE-2021-22925.html)
+  * [CVE-2021-22926](https://curl.se/docs/CVE-2021-22926.html)
+
+* `openjdk` has been upgraded to 1.8.302-08, fixing:
+  * [CVE-2021-2341](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2341)
+  * [CVE-2021-2369](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2369)
+  * [CVE-2021-2388](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2388)
+
+<br>
+
+---
+
 ## r151030dg (2021-06-14)
 Weekly release for w/c 14th of June 2021.
 > This is a non-reboot update
