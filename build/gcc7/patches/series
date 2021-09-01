@@ -24,3 +24,4 @@
 0025-i386-use-the-new-style-retpoline-thunk-names-for-ext.patch
 0026-Use-GNU-backends-for-gcc-ar-nm-ranlib.patch
 0030-13185-zassert-deflib-does-not-work-for-64-bit-object.patch
+__illumos__.patch
