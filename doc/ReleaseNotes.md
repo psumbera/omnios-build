@@ -4,11 +4,27 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030ds (2021-09-07)
+Weekly release for w/c 06th of September 2021.
+> This is a non-reboot update
+
+### New Features
+
+* The `__illumos__` pre-processor token is now defined by the gcc compilers.
+
+### Bug Fixes
+
+* p7zip would truncate passphrases read from the terminal.
+
+<br>
+
+---
+
 ## r151030dq (2021-08-24)
 Weekly release for w/c 23rd of August 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openssl 1.1` updated to 1.1.1l, fixing
   [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711),
@@ -25,7 +41,7 @@ Weekly release for w/c 23rd of August 2021.
 Weekly release for w/c 19th of July 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `curl` has been updated to version 7.78.0 fixing 5 security vulnerabilities:
   * [CVE-2021-22922](https://curl.se/docs/CVE-2021-22922.html)
@@ -47,7 +63,7 @@ Weekly release for w/c 19th of July 2021.
 Weekly release for w/c 14th of June 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * ISC DHCP updated to 4.4.2-P1, fixing
   [CVE-2021-25217](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25217).
@@ -60,7 +76,7 @@ Weekly release for w/c 14th of June 2021.
 Weekly release for w/c 24th of May 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * curl updated to 7.77.0, fixing
   [CVE-2021-22901](https://curl.se/docs/CVE-2021-22901.html),
@@ -75,7 +91,7 @@ Weekly release for w/c 24th of May 2021.
 Weekly release for w/c 17th of May 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * libxml2 updated to 2.9.12, fixing
   [CVE-2021-3541](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3541).
@@ -88,7 +104,7 @@ Weekly release for w/c 17th of May 2021.
 Weekly release for w/c 19th of April 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openjdk` updated, fixing
   [CVE-2021-2161](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2161),
@@ -102,7 +118,7 @@ Weekly release for w/c 19th of April 2021.
 Weekly release for w/c 12th of April 2021.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * `curl` updated to 7.76.1
 
@@ -114,7 +130,7 @@ Weekly release for w/c 12th of April 2021.
 Weekly release for w/c 29th of March 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `curl` updated to 7.76.0, fixing
   [CVE-2021-22876](https://curl.se/docs/CVE-2021-22876.html),
@@ -128,7 +144,7 @@ Weekly release for w/c 29th of March 2021.
 Weekly release for w/c 22th of March 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1k, fixing
   [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449),
@@ -142,7 +158,7 @@ Weekly release for w/c 22th of March 2021.
 Weekly release for w/c 8th of March 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `git` has been updated to version 2.21.4, fixing
   [CVE-2021-21300](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21300).
@@ -155,7 +171,7 @@ Weekly release for w/c 8th of March 2021.
 Weekly release for w/c 22nd of Februrary 2021.
 > This is a non-reboot update
 
-# Other Changes
+### Other Changes
 
 * Fix a regression in the `python-35` package.
 
@@ -167,7 +183,7 @@ Weekly release for w/c 22nd of Februrary 2021.
 Weekly release for w/c 15th of February 2021.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1j, fixing
   [CVE-2021-23840](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23840),
@@ -178,7 +194,7 @@ Weekly release for w/c 15th of February 2021.
 * All shipped `python` versions have been updated to address
   [CVE-2021-3177](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3177).
 
-# Other Changes
+### Other Changes
 
 * Adding a second disk to an Azure instance caused a kernel panic.
 
@@ -199,7 +215,7 @@ Weekly release for w/c 15th of February 2021.
 Weekly release for w/c 8th of February 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `screen` updated to fix
   [CVE-2021-3156](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156).
@@ -212,7 +228,7 @@ Weekly release for w/c 8th of February 2021.
 Weekly release for w/c 25th of January 2021.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * It was possible for an unprivileged user, including one in a zone, to cause
   the system to panic.
@@ -222,7 +238,7 @@ Weekly release for w/c 25th of January 2021.
 
 * `socat` updated to fix a potential heap based buffer overflow.
 
-# Other Changes
+### Other Changes
 
 * Support for Active-Directory servers which enforce secure RPC
   (due to CVE-2020-1472).
@@ -247,7 +263,7 @@ Weekly release for w/c 25th of January 2021.
 Weekly release for w/c 07th of December 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1i, fixing
   [CVE-2020-1971](https://www.openssl.org/news/secadv/20201208.txt)
@@ -261,7 +277,7 @@ Weekly release for w/c 07th of December 2020.
   [CVE-2020-8285](https://curl.se/docs/CVE-2020-8285.html),
   [CVE-2020-8286](https://curl.se/docs/CVE-2020-8286.html)
 
-# Bug Fixes
+### Bug Fixes
 
 * MacOS Big Sur clients would experience read hangs when accessing OmniOS
   SMB shares.
@@ -272,7 +288,7 @@ Weekly release for w/c 07th of December 2020.
 
 * Compiling with `gcc -pg` did not produce a working profiling binary.
 
-# Other Changes
+### Other Changes
 
 * The Intel CPU microcode update for some Core (Gen. 11) Mobile processors
   has been removed as it was reported to cause problems on some platforms.
@@ -285,12 +301,12 @@ Weekly release for w/c 07th of December 2020.
 Weekly release for w/c 16th of November 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Updated Intel processor microcode from Intel, fixing several security
   vulnerabilities.
 
-# Other Changes
+### Other Changes
 
 * `pkg` could backtrace when displaying licence information.
 
@@ -302,7 +318,7 @@ Weekly release for w/c 16th of November 2020.
 Weekly release for w/c 26th of October 2020.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * OpenJDK 8 updated to 1.8.0.272, fixing
   [multiple CVEs](https://foojay.io/java-8/?quarter=102020&tab=cve&version=openjdk8u272).
@@ -315,13 +331,13 @@ Weekly release for w/c 26th of October 2020.
 Weekly release for w/c 19th of October 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Fix for
   [CVE-2020-27678](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27678)
   - a pre-auth remote root exploit in PAM.
 
-# Other Changes
+### Other Changes
 
 * Fixes for better handling of low memory situations, particularly when running
   in AWS.
@@ -334,7 +350,7 @@ Weekly release for w/c 19th of October 2020.
 Weekly release for w/c 5th of October 2020.
 > This is a non-reboot update
 
-# Other Changes
+### Other Changes
 
 * Enhancement to `pkg` to allow for more detailed diagnostic messages
   via `-vv` in the event that an upgrade solution can't be found.
@@ -347,12 +363,12 @@ Weekly release for w/c 5th of October 2020.
 Weekly release for w/c 21st of September 2020.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `python3` updated to
   [3.5.10](https://docs.python.org/3.5/whatsnew/changelog.html).
 
-# Other Changes
+### Other Changes
 
 * `nss` updated to `3.57` and
   `nspr` updated to `4.29`
@@ -367,7 +383,7 @@ Weekly release for w/c 21st of September 2020.
 Weekly release for w/c 14th of September 2020.
 > This update requires a reboot if bhyve is installed
 
-# Security Fixes
+### Security Fixes
 
 * It was possible for a bhyve guest running under AMD SVM to execute some
   instructions against host physical memory -
@@ -381,7 +397,7 @@ Weekly release for w/c 14th of September 2020.
 Weekly release for w/c 31st of August 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * It was theoretically possible to escape from a zone that has permission
   to create a bhyve instance -
@@ -389,7 +405,7 @@ Weekly release for w/c 31st of August 2020.
   Note that in OmniOS only _bhyve_-branded zones have access to bhyve and this
   vulnerability does not enable escape from a bhyve virtual machine.
 
-# Other Changes
+### Other Changes
 
 * Fix for a ZFS-related panic -
   [13034 dnode_sync is careless with range tree](https://www.illumos.org/issues/13034)
@@ -407,7 +423,7 @@ Weekly release for w/c 31st of August 2020.
 Weekly release for w/c 24th of August 2020.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `curl` updated fixing
   * [CVE-2020-8231](https://curl.haxx.se/docs/CVE-2020-8231.html).
@@ -420,7 +436,7 @@ Weekly release for w/c 24th of August 2020.
 Weekly release for w/c 10th of August 2020.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * OpenJDK 8 updated to 1.8.0.265, fixing multiple CVEs:
   * [CVE-2020-14556](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14556)
@@ -444,7 +460,7 @@ Weekly release for w/c 10th of August 2020.
 Weekly release for w/c 3rd of August 2020.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * Update `pkg` to fix bugs with conditional dependency handling.
 
@@ -456,7 +472,7 @@ Weekly release for w/c 3rd of August 2020.
 Weekly release for w/c 27th of July 2020.
 > This update requires a reboot
 
-# Fixes
+### Fixes
 
 * System panic when using the `lockstat` command
 * `lofiadm -la` does not always create devfs symlinks
@@ -471,7 +487,7 @@ Weekly release for w/c 27th of July 2020.
 Weekly release for w/c 20th of July 2020.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
  * Updated OpenJDK8 to 1.8.0\_262
  * Updated rsync to 3.2.2
@@ -484,7 +500,7 @@ Weekly release for w/c 20th of July 2020.
 Weekly release for w/c 29th of June 2020.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * Curl updated fixing
   [CVE-2020-8169](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8169),
@@ -498,7 +514,7 @@ Weekly release for w/c 29th of June 2020.
 Weekly release for w/c 22nd of June 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Intel microcode updated to 20200616.
 
@@ -510,7 +526,7 @@ Weekly release for w/c 22nd of June 2020.
 Weekly release for w/c 8th of June 2020.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `perl` updated to 5.28.3 fixing
   [CVE-2020-10543](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10543),
@@ -521,7 +537,7 @@ Weekly release for w/c 8th of June 2020.
 * `nghttp2` updated to 1.41.0 fixing
   [CVE-2020-11080](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11080).
 
-# Other Changes
+### Other Changes
 
 * `open-vm-tools` updated to 11.1.0.
 
@@ -533,7 +549,7 @@ Weekly release for w/c 8th of June 2020.
 Weekly release for w/c 01st of June 2020.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * Fix bug in the `pkgdepend` package dependency generator.
   (Required to consistently build gate after 12708 is integrated)
@@ -546,11 +562,11 @@ Weekly release for w/c 01st of June 2020.
 Weekly release for w/c 11th of May 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Fix for a kernel panic when running an NFS client within an lx-branded zone
 
-# Other Changes
+### Other Changes
 
 * `w` and `whodo` produced error messages about processes in non-global zones
 
@@ -566,7 +582,7 @@ Weekly release for w/c 11th of May 2020.
 Weekly release for w/c 27th of April 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1g
 
@@ -578,7 +594,7 @@ Weekly release for w/c 27th of April 2020.
 * [12523](https://www.illumos.org/issues/12523)
   Buffer overflow in `w` and `whodo`
 
-# Other Changes
+### Other Changes
 
 * `python` 2.7 updated to 2.7.18, the last python 2.7 release
 
@@ -599,7 +615,7 @@ Weekly release for w/c 27th of April 2020.
 Weekly release for w/c 06th of April 2020.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * `openssl` updated to 1.1.1f
 
@@ -611,7 +627,7 @@ Weekly release for w/c 06th of April 2020.
 Weekly release for w/c 30th of March 2020.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * `openssl` updated to 1.1.1e
 
@@ -625,12 +641,12 @@ Weekly release for w/c 30th of March 2020.
 Weekly release for w/c 17th of February 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * sudo updated to fix
   [CVE-2019-18634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18634)
 
-# Other Changes
+### Other Changes
 
 * Fix for divide-by-zero bug in the i40e network driver
   [illumos 9601](https://www.illumos.org/issues/9601)
@@ -645,7 +661,7 @@ Weekly release for w/c 17th of February 2020.
 Weekly release for w/c 20th of January 2020.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * It was not always possible to create a new boot environment from within a
   sparse-branded zone.
@@ -658,12 +674,12 @@ Weekly release for w/c 20th of January 2020.
 Weekly release for w/c 23rd of December 2019.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * OpenSSL 1.0 updated to 1.0.2u, fixing
   [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551)
 
-# Other Changes
+### Other Changes
 
 * Installation media updated to fix an installer bug which caused the system
   domain name to be truncated to 20 characters.
@@ -676,11 +692,11 @@ Weekly release for w/c 23rd of December 2019.
 Weekly release for w/c 2nd of December 2019.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Update Intel CPU Microcode to 20191115.
 
-# Other Changes
+### Other Changes
 
 * Fixes to support for large (> 2TB) USB hard disks.
 
@@ -696,7 +712,7 @@ Weekly release for w/c 2nd of December 2019.
 Weekly release for w/c 11th of November 2019.
 > This update requires a reboot
 
-# Bug fixes
+### Bug fixes
 
 * Fix ZFS bug that could prevent pool import following an unclean export
   in certain circumstances -
@@ -712,7 +728,7 @@ Weekly release for w/c 11th of November 2019.
 Weekly release for w/c 28th of October 2019.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * Python3 - upgrade to python 3.5.8
 
@@ -732,14 +748,14 @@ Weekly release for w/c 28th of October 2019.
 Weekly release for w/c 21st of October 2019.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Upgrade `sudo` package to 1.8.28p1, fixing
   [CVE-2019-14287](https://www.sudo.ws/alerts/minus_1_uid.html)
 
 * Update Intel Microcode to 20190918
 
-# Other Changes
+### Other Changes
 
 * Update timezone and hardware databases
 
@@ -763,7 +779,7 @@ Weekly release for w/c 21st of October 2019.
 Weekly release for w/c 30th of September 2019.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * Deliver updated `pkg` to fix a bug preventing variant changes.
 
@@ -779,7 +795,7 @@ Weekly release for w/c 30th of September 2019.
 Weekly release for w/c 23rd of September 2019.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `expat` updated to 2.2.8, fixing
   [CVE-2019-15903](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15903),
@@ -792,7 +808,7 @@ Weekly release for w/c 23rd of September 2019.
 Weekly release for w/c 9th of September 2019.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1d/1.0.2t, fixing
   [CVE-2019-1547](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1547),
@@ -809,7 +825,7 @@ Weekly release for w/c 9th of September 2019.
   This is via the new `system/data/urxvt-terminfo` package which will be
   automatically installed when upgrading to this release.
 
-# Other Changes
+### Other Changes
 
 * `pkg` updated to fix some boundary check issues when updating sparse zones.
 
@@ -823,7 +839,7 @@ Weekly release for w/c 9th of September 2019.
 Weekly release for w/c 26th of August 2019.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * Updated `shell/bash` package to version 5.0.9
 
@@ -835,7 +851,7 @@ Weekly release for w/c 26th of August 2019.
 Weekly release for w/c 29th of July 2019.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * Updated `gnu-coreutils` package to fix bugs in the GNU `ln` command.
 
@@ -847,7 +863,7 @@ Weekly release for w/c 29th of July 2019.
 Weekly release for w/c 22nd of July 2019.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * nss upgraded to 3.45, fixing
   [CVE-2019-11719](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11719),
@@ -855,7 +871,7 @@ Weekly release for w/c 22nd of July 2019.
   [CVE-2019-11727](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11727)
   and several other bugs.
 
-# Other Changes
+### Other Changes
 
 * The `gcc-ar` utility has been fixed for both gcc7 and gcc8.
 
@@ -871,7 +887,7 @@ Weekly release for w/c 22nd of July 2019.
 Weekly release for w/c 8th of July 2019.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * bzip2 upgraded to 1.0.7, fixing
   [CVE-2019-12900](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12900)
@@ -885,11 +901,11 @@ Weekly release for w/c 8th of July 2019.
 Weekly release for w/c 24th of June 2019.
 > This update requires a reboot.
 
-# Security Fixes
+### Security Fixes
 
 * Expat upgraded to 2.2.7 to fix denial-of-service vulnerability.
 
-# Other changes
+### Other changes
 
 * Performance improvements and fixes for occasional VM lockups -
   [SmartOS OS-7753](https://smartos.org/bugview/OS-7753)
@@ -915,7 +931,7 @@ Weekly release for w/c 24th of June 2019.
 Weekly release for w/c 10th of June 2019.
 > This is a non-reboot update.
 
-# Security Fixes
+### Security Fixes
 
 * Curl upgraded to 7.65.1
   * [CVE-2019-5435](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5435): Integer overflows in curl_url_set
@@ -923,7 +939,7 @@ Weekly release for w/c 10th of June 2019.
 
 * Vim patched against [CVE-2019-12735](https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md)
 
-# Other changes
+### Other changes
 
 * Some packages could not be installed under a sparse zone, reporting that
   files were being delivered outside of the target boot environment.
@@ -940,7 +956,7 @@ Weekly release for w/c 10th of June 2019.
 Weekly release for w/c 3rd of June 2019.
 > This is a non-reboot update.
 
-# Security Fixes
+### Security Fixes
 
 * OpenSSL updates to 1.1.1c/1.0.2s, fixing
   * [CVE-2019-1559](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1559)
@@ -954,7 +970,7 @@ Weekly release for w/c 3rd of June 2019.
 Weekly release for w/c 20th of May 2019.
 > This update requires a reboot.
 
-# Security Fixes
+### Security Fixes
 
 * Mitigations for a series of CPU side channel vulnerabilities that affect
   Intel CPUs. These are collectively known as multi-architectural data
@@ -968,7 +984,7 @@ Weekly release for w/c 20th of May 2019.
 
 * Intel CPU microcode has been updated to the 20190514 release.
 
-# Other Changes
+### Other Changes
 
 * New feature allowing hyperthreading to be disabled on a running system or
   at boot time. To disable on an active system use `psradm -aS` and to disable
