@@ -17,7 +17,7 @@
 . ../../lib/functions.sh
 
 PROG=Python
-VER=3.7.10
+VER=3.7.12
 PKG=runtime/python-37
 MVER=${VER%.*}
 SUMMARY="$PROG $MVER"

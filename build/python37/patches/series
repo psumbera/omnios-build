@@ -28,5 +28,3 @@ profile-tests.patch
 testopts.patch
 disable_epoll.patch
 regrtest-processgroup.patch
-CVE-2021-3426.patch
-security-issue43285.patch

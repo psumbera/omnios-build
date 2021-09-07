@@ -151,7 +151,7 @@ diff -wpruN '--exclude=*.orig' a~/Lib/test/test_site.py a/Lib/test/test_site.py
 diff -wpruN '--exclude=*.orig' a~/Lib/test/test_socket.py a/Lib/test/test_socket.py
 --- a~/Lib/test/test_socket.py	1970-01-01 00:00:00
 +++ a/Lib/test/test_socket.py	1970-01-01 00:00:00
-@@ -2717,6 +2717,8 @@ class RecvmsgGenericTests(SendrecvmsgBas
+@@ -2719,6 +2719,8 @@ class RecvmsgGenericTests(SendrecvmsgBas
      def _testRecvmsgShorter(self):
          self.sendToServer(MSG)
  
@@ -160,7 +160,7 @@ diff -wpruN '--exclude=*.orig' a~/Lib/test/test_socket.py a/Lib/test/test_socket
      def testRecvmsgTrunc(self):
          # Receive part of message, check for truncation indicators.
          msg, ancdata, flags, addr = self.doRecvmsg(self.serv_sock,
-@@ -3011,7 +3013,7 @@ class CmsgMacroTests(unittest.TestCase):
+@@ -3013,7 +3015,7 @@ class CmsgMacroTests(unittest.TestCase):
          # Test CMSG_SPACE() with various valid and invalid values,
          # checking the assumptions used by sendmsg().
          toobig = self.socklen_t_limit - socket.CMSG_SPACE(1) + 1
@@ -169,7 +169,7 @@ diff -wpruN '--exclude=*.orig' a~/Lib/test/test_socket.py a/Lib/test/test_socket
  
          last = socket.CMSG_SPACE(0)
          # struct cmsghdr has at least three members, two of which are ints
-@@ -3158,6 +3160,7 @@ class SCMRightsTest(SendrecvmsgServerTim
+@@ -3160,6 +3162,7 @@ class SCMRightsTest(SendrecvmsgServerTim
  
      @unittest.skipIf(sys.platform == "darwin", "skipping, see issue #12958")
      @unittest.skipIf(sys.platform.startswith("aix"), "skipping, see issue #22397")
@@ -177,7 +177,7 @@ diff -wpruN '--exclude=*.orig' a~/Lib/test/test_socket.py a/Lib/test/test_socket
      @requireAttrs(socket, "CMSG_SPACE")
      def testFDPassSeparate(self):
          # Pass two FDs in two separate arrays.  Arrays may be combined
-@@ -3169,6 +3172,7 @@ class SCMRightsTest(SendrecvmsgServerTim
+@@ -3171,6 +3174,7 @@ class SCMRightsTest(SendrecvmsgServerTim
      @testFDPassSeparate.client_skip
      @unittest.skipIf(sys.platform == "darwin", "skipping, see issue #12958")
      @unittest.skipIf(sys.platform.startswith("aix"), "skipping, see issue #22397")
@@ -185,7 +185,7 @@ diff -wpruN '--exclude=*.orig' a~/Lib/test/test_socket.py a/Lib/test/test_socket
      def _testFDPassSeparate(self):
          fd0, fd1 = self.newFDs(2)
          self.assertEqual(
-@@ -3182,6 +3186,7 @@ class SCMRightsTest(SendrecvmsgServerTim
+@@ -3184,6 +3188,7 @@ class SCMRightsTest(SendrecvmsgServerTim
  
      @unittest.skipIf(sys.platform == "darwin", "skipping, see issue #12958")
      @unittest.skipIf(sys.platform.startswith("aix"), "skipping, see issue #22397")
@@ -193,7 +193,7 @@ diff -wpruN '--exclude=*.orig' a~/Lib/test/test_socket.py a/Lib/test/test_socket
      @requireAttrs(socket, "CMSG_SPACE")
      def testFDPassSeparateMinSpace(self):
          # Pass two FDs in two separate arrays, receiving them into the
-@@ -3196,6 +3201,7 @@ class SCMRightsTest(SendrecvmsgServerTim
+@@ -3198,6 +3203,7 @@ class SCMRightsTest(SendrecvmsgServerTim
      @testFDPassSeparateMinSpace.client_skip
      @unittest.skipIf(sys.platform == "darwin", "skipping, see issue #12958")
      @unittest.skipIf(sys.platform.startswith("aix"), "skipping, see issue #22397")
