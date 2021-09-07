@@ -4,11 +4,27 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036as (2021-09-07)
+Weekly release for w/c 06th of September 2021.
+> This is a non-reboot update
+
+### Security Fixes
+
+* Python updated to 3.7.12
+
+### Bug Fixes
+
+* p7zip would truncate passphrases read from the terminal.
+
+<br>
+
+---
+
 ## r151036aq (2021-08-24)
 Weekly release for w/c 23rd of August 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openssl 1.1` updated to 1.1.1l, fixing
   [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711),
@@ -25,7 +41,7 @@ Weekly release for w/c 23rd of August 2021.
 Weekly release for w/c 9th of August 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `perl` core module `Encode` has been patched fixing
   [CVE-2021-36770](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36770).
@@ -38,7 +54,7 @@ Weekly release for w/c 9th of August 2021.
 Weekly release for w/c 19th of July 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `curl` has been updated to version 7.78.0 fixing 5 security vulnerabilities:
   * [CVE-2021-22922](https://curl.se/docs/CVE-2021-22922.html)
@@ -60,7 +76,7 @@ Weekly release for w/c 19th of July 2021.
 Weekly release for w/c 14th of June 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * ISC DHCP updated to 4.4.2-P1, fixing
   [CVE-2021-25217](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25217).
@@ -73,7 +89,7 @@ Weekly release for w/c 14th of June 2021.
 Weekly release for w/c 24th of May 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * curl updated to 7.77.0, fixing
   [CVE-2021-22901](https://curl.se/docs/CVE-2021-22901.html),
@@ -88,7 +104,7 @@ Weekly release for w/c 24th of May 2021.
 Weekly release for w/c 17th of May 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * libxml2 updated to 2.9.12, fixing
   [CVE-2021-3541](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3541).
@@ -101,7 +117,7 @@ Weekly release for w/c 17th of May 2021.
 Weekly release for w/c 19th of April 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openjdk` updated, fixing
   [CVE-2021-2161](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2161),
@@ -115,7 +131,7 @@ Weekly release for w/c 19th of April 2021.
 Weekly release for w/c 12th of April 2021.
 > This update requires a reboot
 
-# Changes
+### Changes
 
 * `curl` updated to 7.76.1
 
@@ -142,7 +158,7 @@ Weekly release for w/c 12th of April 2021.
 Weekly release for w/c 29th of March 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `curl` updated to 7.76.0, fixing
   [CVE-2021-22876](https://curl.se/docs/CVE-2021-22876.html),
@@ -156,7 +172,7 @@ Weekly release for w/c 29th of March 2021.
 Weekly release for w/c 22th of March 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1k, fixing
   [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449),
@@ -173,7 +189,7 @@ Weekly release for w/c 22th of March 2021.
 Weekly release for w/c 8th of March 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `git` has been updated to version 2.28.1, fixing
   [CVE-2021-21300](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21300).
@@ -186,7 +202,7 @@ Weekly release for w/c 8th of March 2021.
 Weekly release for w/c 15th of February 2021.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1j, fixing
   [CVE-2021-23840](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23840),
@@ -197,7 +213,7 @@ Weekly release for w/c 15th of February 2021.
 * All shipped `python` versions have been updated to address
   [CVE-2021-3177](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3177).
 
-# Other Changes
+### Other Changes
 
 * Adding a second disk to an Azure instance caused a kernel panic.
 
@@ -212,7 +228,7 @@ Weekly release for w/c 15th of February 2021.
 Weekly release for w/c 8th of February 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `screen` updated to fix
   [CVE-2021-3156](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156).
@@ -225,7 +241,7 @@ Weekly release for w/c 8th of February 2021.
 Weekly release for w/c 25th of January 2021.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * It was possible for an unprivileged user, including one in a zone, to cause
   the system to panic.
@@ -235,7 +251,7 @@ Weekly release for w/c 25th of January 2021.
 
 * `socat` updated to fix a potential heap based buffer overflow.
 
-# Other Changes
+### Other Changes
 
 * Support for Active-Directory servers which enforce secure RPC
   (due to CVE-2020-1472).
@@ -262,7 +278,7 @@ Weekly release for w/c 25th of January 2021.
 Weekly release for w/c 7th of December 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * `openssl` updated to 1.1.1i, fixing
   [CVE-2020-1971](https://www.openssl.org/news/secadv/20201208.txt)
@@ -276,7 +292,7 @@ Weekly release for w/c 7th of December 2020.
   [CVE-2020-8285](https://curl.se/docs/CVE-2020-8285.html),
   [CVE-2020-8286](https://curl.se/docs/CVE-2020-8286.html)
 
-# Bug Fixes
+### Bug Fixes
 
 * MacOS Big Sur clients would experience read hangs when accessing OmniOS
   SMB shares.
@@ -299,8 +315,7 @@ Weekly release for w/c 7th of December 2020.
 * Restore the NDMP ZFS backup and restore method which was inadvertently
   broken in the r151036 release.
 
-
-# Other Changes
+### Other Changes
 
 * The Intel CPU microcode update for some Core (Gen. 11) Mobile processors
   has been removed as it was reported to cause problems on some platforms.
@@ -317,12 +332,12 @@ Weekly release for w/c 7th of December 2020.
 Weekly release for w/c 16th of November 2020.
 > This update requires a reboot
 
-# Security Fixes
+### Security Fixes
 
 * Updated Intel processor microcode from Intel, fixing several security
   vulnerabilities.
 
-# Other Changes
+### Other Changes
 
 * `rsyslog` was ignoring the local system timezone and always logging in UTC.
 
