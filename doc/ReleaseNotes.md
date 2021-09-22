@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036au (2021-09-23)
+Weekly release for w/c 20th of September 2021.
+> This is a non-reboot update
+
+# Changes
+
+* `curl` has been updated to version 7.79.1.
+
+<br>
+
+---
+
 ## r151036at (2021-09-15)
 Weekly release for w/c 13th of September 2021.
 > This is a non-reboot update
