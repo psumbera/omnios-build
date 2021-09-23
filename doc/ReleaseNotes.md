@@ -4,11 +4,30 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030dv (2021-09-28)
+Weekly release for w/c 27th of September 2021.
+> This update requires a reboot
+
+### Security Fixes
+
+* OpenSSH has been updated, fixing
+  [CVE-2021-41617](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41617).
+
+### Bug fixes
+
+* Performance of the system console has been significantly improved.
+
+* Attempting to multiplex non-device streams could result in a kernel panic.
+
+<br>
+
+---
+
 ## r151030du (2021-09-23)
 Weekly release for w/c 20th of September 2021.
 > This is a non-reboot update
 
-# Changes
+### Changes
 
 * `curl` has been updated to version 7.79.1.
 
@@ -20,7 +39,7 @@ Weekly release for w/c 20th of September 2021.
 Weekly release for w/c 13th of September 2021.
 > This is a non-reboot update
 
-# Security Fixes
+### Security Fixes
 
 * `curl` has been updated to version 7.79.0 fixing 3 security vulnerabilities:
   * [CVE-2021-22945](https://curl.se/docs/CVE-2021-22945.html)
