@@ -25,3 +25,4 @@ test.patch
 gssapi.patch
 ssh-copy-id.patch
 CVE-2021-28041.patch
+CVE-2021-41617.patch
