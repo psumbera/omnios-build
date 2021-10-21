@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151036dy (2021-10-21)
+Weekly release for w/c 18th of October 2021.
+> This is a non-reboot update
+
+### Security Fixes
+
+* `openjdk` has been updated to 1.8.312-07 fixing several CVEs.
+
+<br>
+
+---
+
 ## r151030dv (2021-09-28)
 Weekly release for w/c 27th of September 2021.
 > This update requires a reboot
