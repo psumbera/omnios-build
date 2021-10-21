@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOS v11 r151036
 
+## r151036ay (2021-10-21)
+Weekly release for w/c 18th of October 2021.
+> This is a non-reboot update
+
+### Security Fixes
+
+* `openjdk` has been updated to 11.0.13+8 and 1.8.312-07 fixing several CVEs.
+
+<br>
+
+---
+
 ## r151036av (2021-09-28)
 Weekly release for w/c 27th of September 2021.
 > This update requires a reboot
