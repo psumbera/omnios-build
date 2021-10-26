@@ -13,7 +13,7 @@
 # }}}
 #
 # Copyright 2017 OmniTI Computer Consulting, Inc.  All rights reserved.
-# Copyright 2020 OmniOS Community Edition (OmniOSce) Association.
+# Copyright 2021 OmniOS Community Edition (OmniOSce) Association.
 #
 . ../../lib/functions.sh
 
@@ -22,9 +22,8 @@ VER=5.11
 PKG=web/ca-bundle
 SUMMARY="Bundle of Root CA certificates"
 
-nsbuild=$SRCDIR/../mozilla-nss-nspr/build.sh
-NSSVER="`grep '^VER=' $nsbuild | sed 's/.*=//;q'`"
-NSPRVER="`grep '^NSPRVER=' $nsbuild | sed 's/.*=//;q'`"
+NSSVER=3.70
+NSPRVER=4.32
 # Make-ca from https://github.com/djlucas/make-ca
 MAKECAVER=0.6
 
@@ -72,17 +71,40 @@ build_pem() {
     logcmd cp $TMPDIR/nss-$NSSVER/nss/COPYING $TMPDIR/$BUILDDIR/license || \
         logerr "--- Failed to copy license file"
 
+    logmsg "-- Cleaning cacert.pem"
     logcmd cp $DESTDIR/etc/ssl/cacert.pem{,.full}
     sed -n < $DESTDIR/etc/ssl/cacert.pem.full > $DESTDIR/etc/ssl/cacert.pem '
         /^#/p
         /---BEGIN CERT/,/---END CERT/p
     '
     logcmd rm -f $DESTDIR/etc/ssl/cacert.pem.full
+
+    # Move certificates into the /etc/ssl/CA directory with a filename that
+    # matches their alias, and update the hash links.
+    logmsg "-- Relocating CA certificates"
+    pushd $DESTDIR/etc/ssl >/dev/null
+    logcmd mkdir -p CA
+    logcmd $FD -t l . certs -X rm
+    for c in certs/*.pem; do
+        local alias=`openssl x509 -in $c -noout -alias | tr ' ' '_' \
+            | tr -cd '[:print:]'`
+        local hash=`openssl x509 -in $c -noout -hash`
+        [ -f "CA/$alias.pem" ] && logerr "Duplicate certificate $c / $alias"
+        logcmd mv $c "CA/$alias.pem" || logerr "Failed to rename $c"
+        local suf=0
+        while [ -f certs/$hash.$suf ]; do
+            ((suf++))
+        done
+        ((suf > 0)) && logmsg -e "--- handled CA collision for $hash ($suf)"
+        logcmd ln -sf "../CA/$alias.pem" "certs/$hash.$suf" \
+            || logerr "Failed to link $alias.pem to $hash.$suf"
+    done
+    popd >/dev/null
 }
 
-# Install the OmniOSce CA cert, to be used by pkg(1)
+# Install the OmniOS CA certs, to be used by pkg(1)
 install_omnios_cacert() {
-    logmsg "Installing OmniOSce CA certs for pkg(1) use"
+    logmsg "Installing OmniOS CA certs"
 
     logcmd mkdir -p $DESTDIR/etc/ssl/pkg
 
