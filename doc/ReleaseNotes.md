@@ -3,11 +3,10 @@
 </a>
 
 # Release Notes for OmniOSce v11 r151040
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) ** These are DRAFT release notes ** ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 
-Stable Release, TBC of November 2021
+Stable Release, 1st of November 2021
 
-`uname -a` shows `omnios-r151040-XXX`
+`uname -a` shows `omnios-r151040-92ae97307e`
 
 r151040 release repository: https://pkg.omnios.org/r151040/core
 
@@ -29,6 +28,13 @@ earlier version, upgrade in stages, referring to the table at
 
 * It is now possible to easily tune the kernel's `segkpsize` variable if
   required - see [eeprom(1M)](https://man.omnios.org/eeprom#OPERANDS).
+
+* The `chrony` NTP package is now available as an alternative to `ntpsec`.
+  New OmniOS installations will now have `chrony` installed by default.
+
+* The experimental `cloud-init` package is included in this release and
+  installable cloud images with this package pre-installed are available
+  for download.
 
 ### Commands and Command Options
 
@@ -168,3 +174,78 @@ earlier version, upgrade in stages, referring to the table at
 
 ### Package changes
 
+| Package | Old Version | New Version |
+| :------ | :---------- | :---------- |
+| compress/gzip | 1.10 | 1.11
+| compress/zstd | 1.4.9 | 1.5.0
+| data/iso-codes | 4.6.0 | 4.7.0
+| database/sqlite-3 | 3.35.5 | 3.36.0
+| developer/build/automake | 1.16.3 | 1.16.4
+| **developer/gcc11** | _New_ | 11.2.0
+| ~~developer/gcc9~~ | 9.3.0 | _Removed_
+| developer/gnu-binutils | 2.36.1 | 2.37
+| developer/macro/gnu-m4 | 1.4.18 | 1.4.19
+| developer/parser/bison | 3.7.6 | 3.8.2
+| developer/versioning/git | 2.31.1 | 2.33.1
+| developer/versioning/mercurial | 5.7.1 | 5.9.1
+| library/c++/sigcpp | 3.0.6 | 3.0.7
+| library/expat | 2.3.0 | 2.4.1
+| library/glib2 | 2.68.1 | 2.68.4
+| library/libffi | 3.3 | 3.4.2
+| library/libidn | 1.36 | 1.38
+| library/nghttp2 | 1.43.0 | 1.45.1
+| library/nspr | 4.30 | 4.32
+| library/nspr/header-nspr | 4.30 | 4.32
+| library/pcre | 8.44 | 8.45
+| library/pcre2 | 10.36 | 10.37
+| library/python-3/attrs-39 | 20.3.0 | 21.2.0
+| library/python-3/cffi-39 | 1.14.5 | 1.14.6
+| library/python-3/cherrypy-39 | 18.6.0 | 18.6.1
+| library/python-3/cryptography-39 | 3.4.6 | 3.4.8
+| library/python-3/idna-39 | 3.1 | 3.2
+| library/python-3/mako-39 | 1.1.4 | 1.1.5
+| library/python-3/meson-39 | 0.57.1 | 0.59.1
+| library/python-3/more-itertools-39 | 8.7.0 | 8.9.0
+| library/python-3/orjson-39 | 3.5.1 | 3.6.3
+| library/python-3/pip-39 | 21.0.1 | 21.2.4
+| library/python-3/prettytable-39 | 2.1.0 | 2.2.0
+| library/python-3/pycurl-39 | 7.43.0.6 | 7.44.1
+| library/python-3/pyrsistent-39 | 0.17.3 | 0.18.0
+| library/python-3/setuptools-39 | 54.1.2 | 58.0.4
+| library/python-3/six-39 | 1.15.0 | 1.16.0
+| library/python-3/tempora-39 | 4.0.1 | 4.1.1
+| library/readline | 8.1 | 8.1.1
+| **library/security/openssl-3** | _New_ | 3.0.0
+| network/dns/bind | 9.16.13 | 9.16.21
+| network/openssh | 8.5.1 | 8.8.1
+| network/openssh-server | 8.5.1 | 8.8.1
+| runtime/perl | 5.32.1 | 5.34.0
+| security/sudo | 1.9.6.1 | 1.9.8.2
+| **service/network/chrony** | _New_ | 4.1
+| service/network/ntpsec | 1.2.0 | 1.2.1
+| shell/bash | 5.1.4 | 5.1.8
+| shell/pipe-viewer | 1.6.6 | 1.6.20
+| shell/tcsh | 6.22.3 | 6.22.4
+| system/data/hardware-registry | 2021.6.2 | 2021.9.23
+| system/data/urxvt-terminfo | 9.22 | 9.26
+| system/data/zoneinfo | 2021.1 | 2021.5
+| system/library/g++-runtime | 10 | 11
+| system/library/gcc-runtime | 10 | 11
+| system/library/gccgo-runtime | 10 | 11
+| system/library/gfortran-runtime | 10 | 11
+| system/library/gobjc-runtime | 10 | 11
+| system/library/libdbus-glib | 0.110 | 0.112
+| system/library/mozilla-nss | 3.63 | 3.70
+| system/library/mozilla-nss/header-nss | 3.63 | 3.70
+| system/library/pcap | 1.10.0 | 1.10.1
+| **system/management/cloud-init** | _New_ | 21.3
+| system/management/snmp/net-snmp | 5.9 | 5.9.1
+| system/pciutils/pci.ids | 2.2.20210516 | 2.2.20210923
+| system/rsyslog | 8.2102.0 | 8.2108.0
+| system/test/fio | 3.26 | 3.28
+| system/virtualization/open-vm-tools | 11.2.5 | 11.3.0
+| terminal/tmux | 3.1.3 | 3.2
+| text/gnu-diffutils | 3.7 | 3.8
+| text/gnu-grep | 3.6 | 3.7
+| text/less | 563 | 590
+| web/wget | 1.21.1 | 1.21.2
