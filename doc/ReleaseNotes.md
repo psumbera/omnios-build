@@ -4,6 +4,18 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030dz (2021-10-29)
+Weekly release for w/c 25th of October 2021.
+> This is a non-reboot update
+
+### Changes
+
+* `ca-bundle` has been updated (`nss` 3.70).
+
+<br>
+
+---
+
 ## r151036dy (2021-10-21)
 Weekly release for w/c 18th of October 2021.
 > This is a non-reboot update
