@@ -42,6 +42,9 @@ link path=usr/java target=jdk/openjdk$(IVER) \
 
 link path=usr/jdk/openjdk$(IVER) target=instances/openjdk$(IVER)
 
+# This is currently the default openjdk version
+<transform link mediator=openjdk -> set mediator-priority vendor>
+
 license $(IFULL)/legal/java.base/LICENSE \
     license="GPLv2/with Classpath Exception"
 
