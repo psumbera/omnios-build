@@ -20,6 +20,8 @@ earlier version, upgrade in stages, referring to the table at
 
 ### System Features
 
+* OmniOS userland is now built with gcc version 11.
+
 * Improved NVMe Hot-plug support.
 
 * Support for promiscuous mode on _vioif_ network interfaces.
@@ -31,6 +33,15 @@ earlier version, upgrade in stages, referring to the table at
 
 * The `chrony` NTP package is now available as an alternative to `ntpsec`.
   New OmniOS installations will now have `chrony` installed by default.
+
+* `openjdk17` is now available but will not automatically be the default system
+  java implementation if installed. As for most components, the default openjdk
+  version can be changed via a mediator:
+  ```
+  pkg set-mediator -V 17 openjdk
+  ```
+  > Thanks to Peter Tribble for doing the work to get OpenJDK17 running on
+  > illumos.
 
 * The experimental `cloud-init` package is included in this release and
   installable cloud images with this package pre-installed are available
