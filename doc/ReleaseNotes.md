@@ -230,6 +230,7 @@ earlier version, upgrade in stages, referring to the table at
 | network/dns/bind | 9.16.13 | 9.16.21
 | network/openssh | 8.5.1 | 8.8.1
 | network/openssh-server | 8.5.1 | 8.8.1
+| **runtime/java/openjdk17** | _New_ | 17.0.1.12
 | runtime/perl | 5.32.1 | 5.34.0
 | security/sudo | 1.9.6.1 | 1.9.8.2
 | **service/network/chrony** | _New_ | 4.1
