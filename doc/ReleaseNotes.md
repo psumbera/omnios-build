@@ -16,6 +16,15 @@ Upgrades are supported from the r151038 release only. If upgrading from an
 earlier version, upgrade in stages, referring to the table at
 <https://omnios.org/upgrade>.
 
+OpenSSH no longer accepts RSA signatures using SHA-1 by default. When
+connecting to very old servers, it may be necessary to selectively re-enable
+RSA/SHA1. The following stanza in ~/.ssh/config will enable RSA/SHA1 for a
+single destination host:
+  ```
+  Host old-host
+      HostkeyAlgorithms +ssh-rsa
+  ```
+
 ## New features since r151038
 
 ### System Features
@@ -167,6 +176,8 @@ earlier version, upgrade in stages, referring to the table at
   [dlpi\_promiscon(3DLPI)](https://man.omnios.org/dlpi_promiscon).
 
 ### Deprecated features
+
+* OpenSSH no longer accepts RSA signatures using SHA-1 by default.
 
 * Version 9 of the `gcc` compiler has been removed in this release.
 
