@@ -4,6 +4,19 @@
 
 # Release Notes for OmniOSce v11 r151030 (LTS)
 
+## r151030ec (2021-11-17)
+Weekly release for w/c 15th of November 2021.
+> This is a non-reboot update
+
+### Changes
+
+* `pkg` has been updated to fix a bug in the `pkgfmt` command which could
+  cause it to fail when converting manifests to _v2_ format.
+
+<br>
+
+---
+
 ## r151030dz (2021-10-29)
 Weekly release for w/c 25th of October 2021.
 > This is a non-reboot update
