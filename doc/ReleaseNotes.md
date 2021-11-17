@@ -4,6 +4,30 @@
 
 # Release Notes for OmniOSce v11 r151040
 
+## r151040c (2021-11-17)
+Weekly release for w/c 15th of November 2021.
+> This is a non-reboot update
+
+### Security Fixes
+
+* `vim` has been updated to version 8.2.3582.
+
+* `python` 3.9 has been updated to version 3.9.8
+
+### Other Changes
+
+* `openjdk17` would previously produce many warnings such as:
+  `SIGSEGV happened inside stack but outside yellow and red zone.`
+
+* Some 32-bit and legacy `net-snmp` libraries had missing symbols.
+
+* `git-pbchk` has been updated to add a new module for verifying the format
+  of package manifests.
+
+<br>
+
+---
+
 Stable Release, 1st of November 2021
 
 `uname -a` shows `omnios-r151040-92ae97307e`
