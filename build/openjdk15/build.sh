@@ -17,13 +17,35 @@
 . ../../lib/build.sh
 
 PROG=openjdk
-VER=17
-UPDATE=1
-BUILD=12
-PKG=runtime/java/openjdk17
+VER=15
+UPDATE=3
+BUILD=0
+PKG=runtime/java/openjdk15
 SUMMARY="openjdk $VER"
 DESC="Open-source implementation of the seventeenth edition of the "
 DESC+="Java SE Platform"
+
+# download jdk repo and create tar archive for later use
+JDK_SRCDIR="jdk${VER}u-jdk-$VER.0.$UPDATE-$BUILD"
+JDK_ARCHIVE="jdk-$VER.0.$UPDATE+$BUILD.tar.bz2"
+if [ ! -f openjdk/$JDK_ARCHIVE ] ; then
+   logmsg "-- Downloading OpenJDK $VER int local archive $JDK_ARCHIVE"
+   if [ x$OPENJDK_REPO = "x" ] ; then
+       OPENJDK_REPO="https://hg.openjdk.java.net/jdk-updates"
+   fi
+   mkdir -p openjdk
+   hg clone $OPENJDK_REPO/jdk15u openjdk/$JDK_SRCDIR
+   (cd openjdk/$JDK_SRCDIR && hg update jdk-15.0.3-ga)
+   rm -rf openjdk/$JDK_SRCDIR/.hg
+   (cd openjdk && TZ=UTC gtar cf jdk-$VER.0.$UPDATE+$BUILD.tar --mtime='1970-01-01' --owner=root --group=root --sort=name $JDK_SRCDIR)
+   pbzip2 openjdk/jdk-$VER.0.$UPDATE+$BUILD.tar
+   echo '5665ed5ef546c6e94af6b0df7fd25b61fab0047d0eb3f6b37c8208ed6b4fba91' > openjdk/$JDK_ARCHIVE.sha256
+   mkdir -p liberation-fonts
+   (cd liberation-fonts; wget $MIRROR/liberation-fonts/liberation-fonts-ttf-2.1.5.tar.gz)
+   (cd liberation-fonts; openjdk; wget $MIRROR/liberation-fonts/liberation-fonts-ttf-2.1.5.tar.gz.sha256)
+fi
+
+MIRROR=`pwd`
 
 # check ooce/fonts/liberation for current version
 LIBERATIONFONTSVER=2.1.5
@@ -37,11 +59,6 @@ BMI_EXPECTED=1
 SKIP_RTIME_CHECK=1
 
 BUILD_DEPENDS_IPS="
-    system/header/header-audio
-    runtime/java/openjdk17
-    ooce/library/fontconfig
-    ooce/library/freetype2
-    ooce/print/cups
 "
 
 RUN_DEPENDS_IPS="runtime/java/jexec"
@@ -50,7 +67,7 @@ VERHUMAN=jdk${VER}u${UPDATE}-b$BUILD
 IVER=${VER}.0
 
 IROOT=usr/jdk/instances
-IFULL=$IROOT/$PROG$IVER
+IFULL=`pwd`/jdk14
 
 OOCEPREFIX=/opt/ooce
 
@@ -79,16 +96,13 @@ CONFIGURE_OPTS="
     --disable-warnings-as-errors
     --enable-unlimited-crypto
     --disable-dtrace
-    --with-cacerts-file=/etc/ssl/java/cacerts
-    --x-includes=$OOCEPREFIX/include
-    --x-libraries=$OOCEPREFIX/lib/$ISAPART64
-    --with-cups-include=$OOCEPREFIX/include
     --with-freetype=bundled
-    --with-fontconfig-include=$OOCEPREFIX/include
 "
+
 CONFIGURE_OPTS_WS="
     --with-extra-cflags=\"$CFLAGS $CFLAGS64\"
     --with-extra-cxxflags=\"$CXXFLAGS $CXXFLAGS64\"
+    AS=/usr/gnu/bin/as
 "
 
 MAKE_ARGS="all"

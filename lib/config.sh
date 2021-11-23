@@ -62,6 +62,9 @@ LC_TIME=C;      export LC_TIME
 # Platform information, e.g. 5.11
 SUNOSVER=`uname -r`
 
+# Oracle Solaris
+ORACLE_SOLARIS=`uname -v | grep ^11\.4 > /dev/null && echo 1 || echo 0`
+
 # Default branch
 RELVER=151041
 DASHREV=0
@@ -158,7 +161,11 @@ PERL_MAKE_TEST=1
 # Paths to common tools
 #############################################################################
 USRBIN=/usr/bin
+if [ $ORACLE_SOLARIS -eq 1 ] ; then
+OOCEBIN=/usr/bin
+else
 OOCEBIN=/opt/ooce/bin
+fi
 SFWBIN=/usr/sfw/bin
 ONBLDBIN=/opt/onbld/bin
 GNUBIN=/usr/gnu/bin
@@ -166,13 +173,22 @@ GNUBIN=/usr/gnu/bin
 AWK=$USRBIN/gawk
 CURL=$USRBIN/curl
 EGREP=$USRBIN/egrep
+if [ $ORACLE_SOLARIS -eq 1 ] ; then
+FGREP=$GNUBIN/fgrep
+else
+FGREP=fgrep
+fi
 GIT=$USRBIN/git
 MAKE=$USRBIN/gmake
 PATCH=$USRBIN/gpatch
 TAR="$USRBIN/gtar --no-same-permissions --no-same-owner"
 TESTSUITE_MAKE=$USRBIN/gmake
 UNZIP=$USRBIN/unzip
+if [ $ORACLE_SOLARIS -eq 1 ] ; then
+WGET=$USRBIN/wget
+else
 WGET=$USRBIN/wget2
+fi
 XZCAT=$USRBIN/xzcat
 ZSTD=$USRBIN/zstd
 LZIP=$USRBIN/lzip

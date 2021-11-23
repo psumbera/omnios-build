@@ -397,7 +397,11 @@ set_ssp() {
 set_gccver() {
     GCCVER="$1"
     [ -z "$2" ] && logmsg "-- Setting GCC version to $GCCVER"
-    GCCPATH="/opt/gcc-$GCCVER"
+    if [ $ORACLE_SOLARIS -eq 1 ] ; then
+        GCCPATH="/usr"
+    else
+        GCCPATH="/opt/gcc-$GCCVER"
+    fi
     GCC="$GCCPATH/bin/gcc"
     GXX="$GCCPATH/bin/g++"
     [ -x "$GCC" ] || logerr "Unknown compiler version $GCCVER"
@@ -1655,7 +1659,7 @@ make_package() {
     logmsg "--- Formatting manifest"
     logcmd $PKGFMT -s $P5M_FINAL
 
-    fgrep -q '$(' $P5M_FINAL \
+    $FGREP -q '$(' $P5M_FINAL \
         && logerr "------ Manifest contains unresolved variables"
 
     if [ -z "$SKIP_PKGLINT" ] && ( [ -n "$BATCH" ] || ask_to_pkglint ); then
