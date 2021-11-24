@@ -6,7 +6,16 @@ illumos-port-2.patch
 illumos-port-3.patch
 illumos-port-4.patch
 illumos-port-5.patch
+illumos-port-6.patch
 illumos-port-7.patch
+illumos-port-8.patch
+illumos-port-9.patch
+illumos-port-10.patch
+illumos-signal-1.patch
+illumos-signal-2.patch
+illumos-signal-3.patch
+illumos-zero-1.patch
+illumos-zero-2.patch
 patch-make_autoconf_flags-cflags.m4 -p0
 patch-make_autoconf_jdk-options.m4 -p0
 patch-make_GenerateLinkOptData.gmk -p0
@@ -29,23 +38,13 @@ tribblix-wait.patch -p0
 omnios-headless.patch
 fontpath.patch
 patch-make_autoconf_lib-x11.m4 -p0
-patch-make_autoconf_libraries.m4 -p0
-patch-make_autoconf_spec.gmk.in -p0
-patch-make_autoconf_toolchain.m4 -p0
 patch-make_hotspot_gensrc_GensrcAdlc.gmk -p0
 patch-make_hotspot_gensrc_GensrcDtrace.gmk -p0
-patch-make_hotspot_lib_CompileJvm.gmk -p0
 patch-make_hotspot_lib_JvmOverrideFiles.gmk -p0
 patch-make_lib_Awt2dLibraries.gmk -p0
 patch-make_lib_Lib-jdk.crypto.ucrypto.gmk -p0
-patch-src_hotspot_os__cpu_solaris__x86_os__solaris__x86.cpp -p0
-patch-src_hotspot_os_solaris_os__solaris.cpp -p0
-patch-src_hotspot_share_utilities_globalDefinitions__gcc.hpp -p0
-patch-src_java.base_solaris_native_libnio_ch_DevPollArrayWrapper.c -p0
-patch-src_jdk.crypto.ec_share_native_libsunec_ECC__JNI.cpp -p0
 Solaris11-EM_486.patch -p1
 Solaris11-TRAPNO.patch -p1
 Solaris11-memcntl.patch -p1
 Solaris11-ssp.patch -p1
-Solaris11-KPIC.patch -p1
 Solaris11-as-m64.patch -p1

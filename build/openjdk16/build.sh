@@ -17,10 +17,10 @@
 . ../../lib/build.sh
 
 PROG=openjdk
-VER=15
-UPDATE=3
+VER=16
+UPDATE=0
 BUILD=0
-PKG=runtime/java/openjdk15
+PKG=runtime/java/openjdk16
 SUMMARY="openjdk $VER"
 DESC="Open-source implementation of the seventeenth edition of the "
 DESC+="Java SE Platform"
@@ -31,15 +31,15 @@ JDK_ARCHIVE="jdk-$VER.0.$UPDATE+$BUILD.tar.bz2"
 if [ ! -f openjdk/$JDK_ARCHIVE ] ; then
    logmsg "-- Downloading OpenJDK $VER int local archive $JDK_ARCHIVE"
    if [ x$OPENJDK_REPO = "x" ] ; then
-       OPENJDK_REPO="https://hg.openjdk.java.net/jdk-updates"
+       OPENJDK_REPO="https://github.com/openjdk"
    fi
    mkdir -p openjdk
-   hg clone $OPENJDK_REPO/jdk15u openjdk/$JDK_SRCDIR
-   (cd openjdk/$JDK_SRCDIR && hg update jdk-15.0.3-ga)
-   rm -rf openjdk/$JDK_SRCDIR/.hg
+   git clone $OPENJDK_REPO/jdk16 openjdk/$JDK_SRCDIR
+   (cd openjdk/$JDK_SRCDIR && git checkout tags/jdk-16-ga)
+   rm -rf openjdk/$JDK_SRCDIR/.git
    (cd openjdk && TZ=UTC gtar cf jdk-$VER.0.$UPDATE+$BUILD.tar --mtime='1970-01-01' --owner=root --group=root --sort=name $JDK_SRCDIR)
    pbzip2 openjdk/jdk-$VER.0.$UPDATE+$BUILD.tar
-   echo '5665ed5ef546c6e94af6b0df7fd25b61fab0047d0eb3f6b37c8208ed6b4fba91' > openjdk/$JDK_ARCHIVE.sha256
+   echo 'f1312414b32704cd79d34b3f6c9ce4c6d9f03fe0118d9e950304cf2fd63d576f' > openjdk/$JDK_ARCHIVE.sha256
    mkdir -p liberation-fonts
    (cd liberation-fonts; wget $MIRROR/liberation-fonts/liberation-fonts-ttf-2.1.5.tar.gz)
    (cd liberation-fonts; openjdk; wget $MIRROR/liberation-fonts/liberation-fonts-ttf-2.1.5.tar.gz.sha256)
@@ -67,7 +67,7 @@ VERHUMAN=jdk${VER}u${UPDATE}-b$BUILD
 IVER=${VER}.0
 
 IROOT=usr/jdk/instances
-IFULL=`pwd`/jdk14
+IFULL=`pwd`/../openjdk15/tmp/build/jdk
 
 OOCEPREFIX=/opt/ooce
 
