@@ -40,3 +40,7 @@ omnios-headless.patch
 headless_build_needs_x11.patch
 security-pkcs11.patch
 fontpath.patch
+Solaris11-EM_486.patch -p1
+Solaris11-TRAPNO.patch -p1
+Solaris11-memcntl.patch -p1
+Solaris11-ssp.patch -p1

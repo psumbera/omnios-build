@@ -37,11 +37,6 @@ BMI_EXPECTED=1
 SKIP_RTIME_CHECK=1
 
 BUILD_DEPENDS_IPS="
-    system/header/header-audio
-    runtime/java/openjdk17
-    ooce/library/fontconfig
-    ooce/library/freetype2
-    ooce/print/cups
 "
 
 RUN_DEPENDS_IPS="runtime/java/jexec"
@@ -50,7 +45,7 @@ VERHUMAN=jdk${VER}u${UPDATE}-b$BUILD
 IVER=${VER}.0
 
 IROOT=usr/jdk/instances
-IFULL=$IROOT/$PROG$IVER
+IFULL=`pwd`/../openjdk16/tmp/build/jdk
 
 OOCEPREFIX=/opt/ooce
 
@@ -79,16 +74,12 @@ CONFIGURE_OPTS="
     --disable-warnings-as-errors
     --enable-unlimited-crypto
     --disable-dtrace
-    --with-cacerts-file=/etc/ssl/java/cacerts
-    --x-includes=$OOCEPREFIX/include
-    --x-libraries=$OOCEPREFIX/lib/$ISAPART64
-    --with-cups-include=$OOCEPREFIX/include
     --with-freetype=bundled
-    --with-fontconfig-include=$OOCEPREFIX/include
 "
 CONFIGURE_OPTS_WS="
     --with-extra-cflags=\"$CFLAGS $CFLAGS64\"
     --with-extra-cxxflags=\"$CXXFLAGS $CXXFLAGS64\"
+    AS=/usr/gnu/bin/as
 "
 
 MAKE_ARGS="all"
